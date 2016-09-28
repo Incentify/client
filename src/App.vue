@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- route outlet -->
+    <header></header>
     <router-view></router-view>
     <navbar v-show="intro"></navbar>
   </div>
@@ -8,10 +9,13 @@
 
 <script>
   import navbar from './components/navbar';
+  import header from './components/header';
+  require('spectre.css/dist/spectre.css');
 
   export default {
     components: {
       navbar,
+      header,
     },
     replace: false,
   };
