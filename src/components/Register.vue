@@ -8,7 +8,8 @@
 export default {
   data() {
     return {
-      msg: 'Login Page!',
+      msg: 'Registration Page!',
+      intro: false,
     };
   },
 };

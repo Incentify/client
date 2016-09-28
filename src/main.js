@@ -1,17 +1,32 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
-import Hello from './components/Hello.vue';
-import Login from './components/Login.vue';
+// routes
+import Register from './components/Register.vue';
+import Profile from './components/Profile.vue';
+import Settings from './components/Settings.vue';
+import Dashboard from './components/Dashboard.vue';
+import Goal from './components/Goal.vue';
+
+// instantiate vue-router
 Vue.use(VueRouter);
 const router = new VueRouter();
 
 router.map({
   '/': {
-    component: Hello,
+    component: Register,
   },
-  '/login': {
-    component: Login,
+  '/profile': {
+    component: Profile,
+  },
+  '/settings': {
+    component: Settings,
+  },
+  '/dashboard': {
+    component: Dashboard,
+  },
+  '/goal': {
+    component: Goal,
   },
 });
 
