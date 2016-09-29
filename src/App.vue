@@ -2,7 +2,7 @@
   <div id="app">
     <!-- route outlet -->
     <top-branding></top-branding>
-    <router-view></router-view>
+    <router-view class="wrapper"></router-view>
     <navbar></navbar>
   </div>
 </template>
@@ -31,10 +31,38 @@
     flex-wrap: nowrap !important;
   }
 
+  .wrapper {
+    height: 91vh !important;
+    width: 100% !important;
+  }
+
   .btn-padding {
     padding: 10px !important;
-    font-size: 10px !important;
+    font-size: 20px !important;
     text-transform: uppercase !important;
-    height: 60px !important;
+    height: 100px !important;
+  }
+
+  .red-nav {
+    color: red !important;
+    border-color: red !important;
+  }
+
+  .red-nav:hover {
+    background-color: black !important;
+    color: white !important;
+    border-color: red !important;
+  }
+
+  .red-nav:focus {
+    background-color: black !important;
+    color: white !important;
+    border-color: red !important;
+  }
+
+  .red-nav:active {
+    background-color: black !important;
+    color: white !important;
+    border-color: white !important;
   }
 </style>

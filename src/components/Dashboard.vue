@@ -1,5 +1,5 @@
 <template>
-    <h1>Dashboard!</h1>
+    	<h1>Dashboard!</h1>
 </template>
 
 <script>
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/*.wrapper {
+    height: 95vh !important;
+    width: 100% !important;
+  }*/
 </style>
