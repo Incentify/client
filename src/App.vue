@@ -3,7 +3,7 @@
     <!-- route outlet -->
     <top-branding></top-branding>
     <router-view class="wrapper"></router-view>
-    <navbar></navbar>
+    <navbar class="box"></navbar>
   </div>
 </template>
 
@@ -11,7 +11,9 @@
   import navbar from './components/navbar';
   import topBranding from './components/top-branding';
 
-  require('spectre.css/dist/spectre.css');
+  // require('spectre.css/dist/spectre.css');
+  // require('bulma/css/bulma.css');
+  require('bulma/bulma.sass');
   require('font-awesome/css/font-awesome.css');
 
   export default {
