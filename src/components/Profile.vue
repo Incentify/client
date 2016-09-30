@@ -1,33 +1,30 @@
 <template>
-	<div class="">
-	<br>
-	    <div class="card">
-	    	<div class="card-header">
-	        	<h4 class="card-title"></h4>
-	        	<h6 class="card-meta"></h6>
+	
+<div style="font-size: 50px;">
+<div class="columns is-mobile">
+  		<div class="column is-4 is-offset-8" style="font-size: 40px; color: #587272;">Profile Settings</div>
+	</div>
+<div class="card is-fullwidth">
+	  <div class="card-content">
+	    <div class="content">
+		<form action="" class="form-horizontal b-pad">
+	    	<label class="label super-mario" for="">name</label>
+	    	<input placeholder="Ryan Wilson" class="input super-mario h-fix"type="text" disabled>
+	    	<br>
+	    	<label class="label super-mario" for="">username</label>
+	    	<input placeholder="comrww" class="input super-mario h-fix"type="text" disabled>
+	    	<br>
+	    	<label class="label super-mario"for="">password</label>
+	    	<input placeholder="Thelion1" class="input super-mario h-fix"type="password" disabled>
+			<br>
+			<label class="label super-mario"for="">age</label>
+	    	<input placeholder="25" class="input super-mario h-fix"type="text" disabled>
+	    	<br><br>
+	    	<button class="button red-nav btn-on-profile">Edit</button>
+	    </form>   
 	    </div>
-	    <div class="card-body">
-			<div class="form-group">
-			    <br>
-			    <form action="" class="form-horizontal">
-			    	<label class="form-label super-mario" for="">name</label>
-			    	<input class="form-label super-mario"type="text">
-			    	<br>
-			    	<label class="form-label super-mario" for="">username</label>
-			    	<input class="form-label super-mario"type="text">
-			    	<label class="form-label super-mario"for="">password</label>
-			    	<input class="form-label super-mario"type="text">
-					<br>
-					<label class="form-label super-mario"for="">age</label>
-			    	<input class="form-label super-mario"type="text">
-			    	<br>
-
-			    </form>    
-			</div>
-		    <div class="card-footer">
-		        <button class="btn btn-primary btn-on-profile red-nav">Edit</button>
-	    	</div>
-		</div>
+	  </div>
+	</div>
 	</div>
 </template>
 
@@ -56,8 +53,17 @@ export default {
 	    text-transform: uppercase !important;
 	    height: 100px !important;
 	    width: 200px !important;
+	    font-size: 30px !important;
   	}
 	.some-padding-profile {
 		padding-top: 50px;
+	}
+
+	.h-fix {
+		height: 100px !important;
+	}
+
+	.b-pad {
+		padding-bottom: 15px;
 	}
 </style>
