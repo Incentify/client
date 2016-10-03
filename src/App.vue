@@ -3,7 +3,7 @@
     <!-- route outlet -->
     <top-branding></top-branding>
     <router-view class="wrapper"></router-view>
-    <navbar></navbar>
+    <navbar class="navbar-one"></navbar>
   </div>
 </template>
 
@@ -11,7 +11,9 @@
   import navbar from './components/navbar';
   import topBranding from './components/top-branding';
 
-  require('spectre.css/dist/spectre.css');
+  // require('spectre.css/dist/spectre.css');
+  // require('bulma/css/bulma.css');
+  require('bulma/bulma.sass');
   require('font-awesome/css/font-awesome.css');
 
   export default {
@@ -24,6 +26,12 @@
 </script>
 
 <style>
+.navbar-one {
+  position: fixed; 
+  bottom: 0px; 
+  width: 100%;
+}
+
   body {
     align-items: center;
     justify-content: center;
@@ -33,7 +41,7 @@
   }
 
   .wrapper {
-    height: 84vh !important;
+    height: 81vh !important;
     width: 100% !important;
   }
 
@@ -41,7 +49,7 @@
     padding: 10px !important;
     font-size: 20px !important;
     text-transform: uppercase !important;
-    height: 100px !important;
+    height: 150px !important;
   }
 
   .red-nav {

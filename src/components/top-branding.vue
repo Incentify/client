@@ -1,5 +1,5 @@
 <template>
-	<div class="modal-footer">
+	<div class="box">
 	    <div class="btn-group btn-group-block">
 	          <a class="btn top-padding red-nav" href="#" v-link="{path:'dashboard'}"><img src="../assets/incentify-logo-rectangle.png"></a>
 	    </div>

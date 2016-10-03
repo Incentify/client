@@ -1,12 +1,12 @@
 <template>
-  <div class="modal-footer">
-    <div class="btn-group btn-group-block">
-          <a class="btn btn-padding red-nav" href="#" v-link="{path:'dashboard'}"><i class="fa fa-tachometer" style="font-size: 60px;" aria-hidden="true"></i><br>Dashboard</a>
-          <a class="btn btn-padding red-nav" href="#" v-link="{path:'profile'}"><i class="fa fa-user" style="font-size: 60px;" aria-hidden="true"></i><br>Profile</a>
-          <a class="btn btn-padding red-nav" href="#" v-link="{path:'settings'}"><i class="fa fa-cog" style="font-size: 60px;" aria-hidden="true"></i><br>Settings</a>
-          <a class="btn btn-padding red-nav" href="#" v-link="{path:'goal'}"><i class="fa fa-plus" style="font-size: 60px;" aria-hidden="true"></i><br>Add Goal</a>
-    </div>
-  </div>
+
+  <footer class="card-footer" style="padding: 0;">
+           <a class="card-footer-item btn-padding red-nav" href="#" v-link="{path:'dashboard'}"><i class="fa fa-tachometer" style="font-size: 60px;" aria-hidden="true"></i></a>
+            <a class="card-footer-item btn-padding red-nav" href="#" v-link="{path:'profile'}"><i class="fa fa-user" style="font-size: 60px;" aria-hidden="true"></i></a>
+            <a class="card-footer-item btn-padding red-nav" href="#" v-link="{path:'settings'}"><i class="fa fa-cog" style="font-size: 60px;" aria-hidden="true"></i></a>
+            <a class="card-footer-item btn-padding red-nav" href="#" v-link="{path:'goal'}"><i class="fa fa-plus" style="font-size: 60px;" aria-hidden="true"></i></a>
+  </footer>
+
 </template>
 
 <script>
