@@ -1,8 +1,9 @@
 <template>
   <div style="font-size: 40px;">  
-	<div class="columns is-mobile">
-  		<div class="column is-1 is-offset-9" style="font-size: 40px; color: #587272;">Settings</div>
-	</div>
+	<div class="is-mobile lil-marg">
+  		<div class="has-text-right" style="font-size: 40px; color: #587272;">Settings</div>
+  	</div>
+	
 
 
 
@@ -154,4 +155,7 @@ export default {
 .margin-dash {
 	margin-top: 15px;
 }
+  .lil-marg {
+    margin-right: 25px !important;
+  }
 </style>

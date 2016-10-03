@@ -78,4 +78,7 @@
     border-color: white !important;
     background-color: white;
   }
+  .lil-marg {
+    margin-right: 25px !important;
+  }
 </style>

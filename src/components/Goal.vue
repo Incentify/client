@@ -1,7 +1,7 @@
 <template>
 <div style="font-size: 50px;">
-	<div class="columns is-mobile">
-  		<div class="column is-3 is-offset-9" style="font-size: 40px; color: #587272;">New Goal</div>
+	<div class="is-mobile lil-marg">
+  		<div class="has-text-right" style="font-size: 40px; color: #587272;">New Goal</div>
 	</div>
 	<div class="card is-fullwidth margin-goal">
 	  <div class="card-content">
@@ -33,7 +33,7 @@
 			    <span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$
 			    </span>
 			  </span>
-			  <input class="input h-fix super-mario" type="text" placeholder="Amount of money">
+			  <input class="input h-fix super-mario" type="text" placeholder="amount under $1000">
 			  <a class="button is-primary red-nav btn-on-goal" style="border: 5px; border-color: red !important;">
 			    set goal
 			  </a>

@@ -1,7 +1,7 @@
 <template>
 <div style="font-size: 50px;">
-	<div class="columns is-mobile">
-  		<div class="column is-2 is-offset-9" style="font-size: 40px; color: #587272;">Dashboard</div>
+	<div class="is-mobile lil-marg">
+  		<div class="has-text-right" style="font-size: 40px; color: #587272;">Dashboard</div>
 	</div>
 	<div class="card is-fullwidth margin-dash">
 	  <div class="card-content">
@@ -18,6 +18,7 @@
 	    <div class="content">
 	      <strong>Treehouse</strong>
 	      comrww
+	      <img src="../assets/treehouse-logo.png" class="is-pulled-right" style="height: 50px; width: 50px;">
 	      <progress class="progress is-small is-success" value="45" max="100">45%</progress>
 	      45%
 	    </div>
