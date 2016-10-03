@@ -29,10 +29,11 @@
     justify-content: center;
     padding: 5px !important;
     flex-wrap: nowrap !important;
+    background-color: ghostwhite !important;
   }
 
   .wrapper {
-    height: 91vh !important;
+    height: 84vh !important;
     width: 100% !important;
   }
 
@@ -46,23 +47,27 @@
   .red-nav {
     color: red !important;
     border-color: red !important;
+    background-color: white !important;
   }
 
   .red-nav:hover {
     background-color: black !important;
     color: white !important;
     border-color: red !important;
+    background-color: white;
   }
 
   .red-nav:focus {
     background-color: black !important;
     color: white !important;
     border-color: red !important;
+    background-color: white;
   }
 
   .red-nav:active {
     background-color: black !important;
     color: white !important;
     border-color: white !important;
+    background-color: white;
   }
 </style>
