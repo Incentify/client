@@ -3,7 +3,7 @@
 	<div class="is-mobile lil-marg">
   		<div class="has-text-right" style="font-size: 40px; color: #587272;">Dashboard</div>
 	</div>
-	<div class="card is-fullwidth margin-dash animate">
+	<div class="card is-fullwidth margin-dash">
 	  <div class="card-content">
 	    <div class="content">
 	      <strong>Goal Name</strong>
@@ -13,7 +13,7 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="card is-fullwidth margin-dash animate">
+	<div class="card is-fullwidth margin-dash">
 	  <div class="card-content">
 	    <div class="content">
 	      <strong>Treehouse</strong>
@@ -24,7 +24,7 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="card is-fullwidth margin-dash animate">
+	<div class="card is-fullwidth margin-dash">
 	  <div class="card-content">
 	    <div class="content">
 	      <strong>DuoLingo</strong>
