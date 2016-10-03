@@ -10,7 +10,8 @@
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <strong v-on:click = "showTerms = !showTerms">Terms & Conditions</strong>
+        <div v-on:click = "showTerms = !showTerms" v-show = "showTerms"><strong>Terms & Conditions</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
+         <div v-on:click = "showTerms = !showTerms" v-show = "!showTerms"><strong>Terms & Conditions</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
       <div v-show = "!showTerms">
       <p>These terms and conditions outline the rules and regulations for the use of  Incentify's Website. <br />
         <span style="text-transform: capitalize;">Incentify</span> is located at:<br />
@@ -125,7 +126,8 @@
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <strong v-on:click = "showMission = !showMission">Mission Statement</strong>
+        <div v-on:click = "showMission = !showMission" v-show = "showMission"><strong>Mission Statement</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
+         <div v-on:click = "showMission = !showMission" v-show = "!showMission"><strong>Mission</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
         <div v-show = "!showMission">
         <p>Our goal is to give people the motivation they need to be truly AWESOME!!!!!!!</p>
         </div>
