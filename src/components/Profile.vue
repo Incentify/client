@@ -39,11 +39,11 @@ export default {
     };
   },
   methods: {
-  	editProfile: function () {
+    editProfile() {
       this.formDisabled = !this.formDisabled;
-  	},
-  	submitProfile: function () {
-  		// vue-resource POST of new user data
+    },
+    submitProfile() {
+      // vue-resource POST of new user data
       this.formDisabled = !this.formDisabled;
     },
   },
