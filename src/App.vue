@@ -26,12 +26,14 @@
 </script>
 
 <style>
-.navbar-one {
-  position: fixed; 
-  bottom: 0px; 
-  width: 100%;
-}
-
+  .global-font-size {
+    font-size: 50px;
+  }
+  .navbar-one {
+    position: fixed; 
+    bottom: 0px; 
+    width: 100%;
+  }
   body {
     align-items: center;
     justify-content: center;
@@ -39,39 +41,33 @@
     flex-wrap: nowrap !important;
     background-color: ghostwhite !important;
   }
-
   .wrapper {
     height: 81vh !important;
     width: 100% !important;
   }
-
   .btn-padding {
     padding: 10px !important;
     font-size: 20px !important;
     text-transform: uppercase !important;
     height: 150px !important;
   }
-
   .red-nav {
     color: red !important;
     border-color: red !important;
     background-color: white !important;
   }
-
   .red-nav:hover {
     background-color: black !important;
     color: white !important;
     border-color: red !important;
     background-color: white;
   }
-
   .red-nav:focus {
     background-color: black !important;
     color: white !important;
     border-color: red !important;
     background-color: white;
   }
-
   .red-nav:active {
     background-color: black !important;
     color: white !important;

@@ -1,18 +1,15 @@
 <template>
-  <div style="font-size: 50px;">  
+  <div class="global-font-size">  
 	<div class="is-mobile lil-marg">
-  		<div class="has-text-right" style="font-size: 40px; color: #587272;">Settings</div>
+  		<div class="has-text-right page-title">Settings</div>
   	</div>
-	
-
-
 
     <!-- Terms and Condition of Application Use -->
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <div v-on:click = "showTerms = !showTerms" v-show = "showTerms"><strong>Terms & Conditions</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
-         <div v-on:click = "showTerms = !showTerms" v-show = "!showTerms"><strong>Terms & Conditions</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
+        <div v-on:click = "showTerms = !showTerms" v-show = "showTerms"><strong>Terms & Conditions</strong><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i></div>
+         <div v-on:click = "showTerms = !showTerms" v-show = "!showTerms"><strong>Terms & Conditions</strong><i class="fa fa-minus is-pulled-right page-headings" aria-hidden="true"></i></div>
       <div v-show = "!showTerms">
       <p>These terms and conditions outline the rules and regulations for the use of  Incentify's Website. <br />
         <span style="text-transform: capitalize;">Incentify</span> is located at:<br />
@@ -127,8 +124,8 @@
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <div v-on:click = "showMission = !showMission" v-show = "showMission"><strong>Mission Statement</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
-         <div v-on:click = "showMission = !showMission" v-show = "!showMission"><strong>Mission</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
+        <div v-on:click = "showMission = !showMission" v-show = "showMission"><strong>Mission Statement</strong><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i></div>
+         <div v-on:click = "showMission = !showMission" v-show = "!showMission"><strong>Mission</strong><i class="fa fa-minus is-pulled-right page-headings" aria-hidden="true"></i></div>
         <div v-show = "!showMission">
         <p>Our goal is to give people the motivation they need to be truly AWESOME!!!!!!!</p>
         </div>
@@ -161,7 +158,14 @@ export default {
 .margin-dash {
   margin-top: 15px;
 }
-  .lil-marg {
-    margin-right: 25px !important;
-  }
+.lil-marg {
+  margin-right: 25px !important;
+}
+.page-title {
+  font-size: 40px; 
+  color: #587272;
+}
+.page-headings {
+  font-size: 60px;
+}
 </style>
