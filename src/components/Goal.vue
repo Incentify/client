@@ -3,6 +3,7 @@
   		<div class="is-mobile lil-marg">
   			<div class="has-text-right" style="font-size: 40px; color: #587272;">New Goal</div>
 		</div>
+      <div class="animated slideInUp">
   		<div class="card is-fullwidth margin-goal">
     		<div class="card-content">
       			<div class="content">
@@ -23,19 +24,21 @@
 				        <a class="button red-nav btn-on-goal">
 				          <span>$50</span>
 				        </a>
-				        <a class="button red-nav btn-on-goal" style="width: 300px !important;">
+				        <a v-on:click = "showTreehouseAmount = !showTreehouseAmount" class="button red-nav btn-on-goal" style="width: 300px !important;">
 				          <span>other</span>
 				        </a>
-					</p>
-      				<p class="control has-addons has-addons-centered">
-        				<span>
-        					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
-        				</span>
-        				<input class="input h-fix super-mario" type="text" placeholder="Amount of money">
-        				<a class="button is-primary red-nav btn-on-goal" style="border: 5px; border-color: red !important;">
-          					<strong>set goal</strong>
-        				</a>
-      				</p>
+              </p>
+              <div v-show = "!showTreehouseAmount">
+        				<p class="control has-addons has-addons-centered">
+          				<span>
+          					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
+          				</span>
+          				<input class="input h-fix super-mario" type="text" placeholder="Amount of money">
+          				<a class="button is-primary red-nav btn-on-goal" style="border: 5px; border-color: red !important;">
+            					<strong>set goal</strong>
+          				</a>
+        				</p>
+              </div>
     			</div>
     			</div>
   			</div>
@@ -61,23 +64,26 @@
 				        <a class="button red-nav btn-on-goal">
 				          <span>$50</span>
 				        </a>
-				        <a class="button red-nav btn-on-goal" style="width: 300px !important;">
+				        <a v-on:click = "showDuoAmount = !showDuoAmount" class="button red-nav btn-on-goal" style="width: 300px !important;">
 				          <span>other</span>
 				        </a>
 					</p>
-      				<p class="control has-addons has-addons-centered">
-        				<span>
-        					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
-        				</span>
-        				<input class="input h-fix super-mario" type="text" placeholder="Amount of money">
-        				<a class="button is-primary red-nav btn-on-goal" style="border: 5px; border-color: red !important;">
-          					<strong>set goal</strong>
-        				</a>
-        	</p>
+              <div v-show = "!showDuoAmount">
+        				<p class="control has-addons has-addons-centered">
+          				<span>
+          					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
+          				</span>
+          				<input class="input h-fix super-mario" type="text" placeholder="Amount of money">
+          				<a class="button is-primary red-nav btn-on-goal" style="border: 5px; border-color: red !important;">
+            					<strong>set goal</strong>
+          				</a>
+          	   </p>
+             </div>
 	      </div>
 	    </div>
 	  </div>
 	</div>
+  </div>
 
 </div>
 </div>
@@ -91,6 +97,8 @@ export default {
     return {
       showTreehouseInfo: true,
       showDuoLingoInfo: true,
+      showTreehouseAmount: true,
+      showDuoAmount: true,
     };
   },
 };
@@ -128,7 +136,8 @@ export default {
     color: white !important;
     border-color: red !important;
   }
-  .h-fix {
+  /*Height Fix*/
+  .h-fix { 
     height: 100px !important;
   }
   .super-mario {
