@@ -1,37 +1,84 @@
 <template>
   <div id="app">
     <!-- route outlet -->
-    <header></header>
-    <router-view></router-view>
-    <navbar v-show="intro"></navbar>
+    <top-branding></top-branding>
+    <router-view class="wrapper"></router-view>
+    <navbar class="navbar-one"></navbar>
   </div>
 </template>
 
 <script>
   import navbar from './components/navbar';
-  import header from './components/header';
-  require('spectre.css/dist/spectre.css');
+  import topBranding from './components/top-branding';
 
+  // require('spectre.css/dist/spectre.css');
+  // require('bulma/css/bulma.css');
+  require('bulma/bulma.sass');
+  require('font-awesome/css/font-awesome.css');
+  require('animate.css/animate.css');
   export default {
     components: {
       navbar,
-      header,
+      topBranding,
     },
     replace: false,
   };
 </script>
 
 <style>
-  html {
-    height: 100%;
-    background-color: ghostwhite;
-  }
+.navbar-one {
+  position: fixed; 
+  bottom: 0px; 
+  width: 100%;
+}
 
   body {
-    font-size: 2em;
-    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    padding: 5px !important;
+    flex-wrap: nowrap !important;
+    background-color: ghostwhite !important;
+  }
+
+  .wrapper {
+    height: 81vh !important;
+    width: 100% !important;
+  }
+
+  .btn-padding {
+    padding: 10px !important;
+    font-size: 20px !important;
+    text-transform: uppercase !important;
+    height: 150px !important;
+  }
+
+  .red-nav {
+    color: red !important;
+    border-color: red !important;
+    background-color: white !important;
+  }
+
+  .red-nav:hover {
+    background-color: black !important;
+    color: white !important;
+    border-color: red !important;
+    background-color: white;
+  }
+
+  .red-nav:focus {
+    background-color: black !important;
+    color: white !important;
+    border-color: red !important;
+    background-color: white;
+  }
+
+  .red-nav:active {
+    background-color: black !important;
+    color: white !important;
+    border-color: white !important;
+    background-color: white;
+  }
+  .lil-marg {
+    margin-right: 25px !important;
   }
 </style>
