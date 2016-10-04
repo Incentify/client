@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size: 40px;">  
+  <div style="font-size: 50px;">  
 	<div class="is-mobile lil-marg">
   		<div class="has-text-right" style="font-size: 40px; color: #587272;">Settings</div>
   	</div>
