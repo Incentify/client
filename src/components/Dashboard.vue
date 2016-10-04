@@ -29,6 +29,7 @@
 	    <div class="content">
 	      <strong>DuoLingo</strong>
 	      comrww
+	      <img src="../assets/duolingo-logo.png" class="is-pulled-right" style="height: 50px; width: 50px;">
 	      <progress class="progress is-small is-success" value="5" max="100">5%</progress>
 	      5%
 	    </div>
