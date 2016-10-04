@@ -9,7 +9,7 @@
       			<div class="content">
        				<div v-on:click = "showTreehouseInfo = !showTreehouseInfo" v-show = "showTreehouseInfo"><strong>Treehouse</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
          			<div v-on:click = "showTreehouseInfo = !showTreehouseInfo" v-show = "!showTreehouseInfo"><strong>Treehouse</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
-        		<div v-show = "!showTreehouseInfo">
+        		<div v-show = "!showTreehouseInfo" class="animated fadeIn">
         			<p>Treehouse brings affordable technology education to people everywhere in order to help them achieve their dreams and change the world.</p>
       				<p class="control has-addons">
 	        			<a class="button red-inverse-nav btn-on-goal" style="width: 300px !important;">
@@ -28,7 +28,7 @@
 				          <span>other</span>
 				        </a>
               </p>
-              <div v-show = "!showTreehouseAmount">
+              <div v-show = "!showTreehouseAmount" class="animated fadeIn">
         				<p class="control has-addons has-addons-centered">
           				<span>
           					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
@@ -49,7 +49,7 @@
 	      <div class="content">
 	         <div v-on:click = "showDuoLingoInfo = !showDuoLingoInfo" v-show = "showDuoLingoInfo"><strong>DuoLingo</strong><i class="fa fa-plus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
 	         <div v-on:click = "showDuoLingoInfo = !showDuoLingoInfo" v-show = "!showDuoLingoInfo"><strong>DuoLingo</strong><i class="fa fa-minus is-pulled-right" style="font-size: 60px;" aria-hidden="true"></i></div>
-	        <div v-show = "!showDuoLingoInfo">
+	        <div v-show = "!showDuoLingoInfo" class="animated fadeIn">
 	        <p>Learning with Duolingo is fun and addictive. Earn points for correct answers, race against the clock, and level up. Our bite-sized lessons are effective, and we have proof that it works.</p>
 	        <p class="control has-addons">
 	        			<a class="button red-inverse-nav btn-on-goal" style="width: 300px !important;">
@@ -68,7 +68,7 @@
 				          <span>other</span>
 				        </a>
 					</p>
-              <div v-show = "!showDuoAmount">
+              <div v-show = "!showDuoAmount" class="animated fadeIn">
         				<p class="control has-addons has-addons-centered">
           				<span>
           					<span class="btn-on-goal super-mario" style="color: red !important; text-align: center !important; width: 100px !important;">$</span>
