@@ -1,5 +1,5 @@
 <template>
-	
+
 <div class="global-font-size">
     <div class="is-mobile lil-marg">
         <div class="has-text-right page-title">Profile Settings</div>
@@ -28,22 +28,27 @@
     </div>
 </div>
 
-
 </template>
 
 <script>
 export default {
-
-  // name: 'component_name',
-
   data() {
     return {
-
+      formDisabled: true,
     };
+  },
+  methods: {
+    editProfile() {
+      this.formDisabled = !this.formDisabled;
+    },
+    submitProfile() {
+      // vue-resource POST of new user data
+      this.formDisabled = !this.formDisabled;
+    },
   },
 };
 </script>
-	
+
 <style lang="css" scoped>
 	/*fix for viewing on mobile device*/
 	.super-mario {

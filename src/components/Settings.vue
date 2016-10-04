@@ -37,7 +37,7 @@
       <p>Redistribute content from Incentify (unless content is specifically made for redistribution).</p>
 
       <h3>User Comments</h3>
-      <ol>
+        <ol>
         <li>This Agreement shall begin on the date hereof.</li>
         <li>Certain parts of this website offer the opportunity for users to post and exchange opinions, information, material and data ('Comments') in areas of the website. Incentify does not screen, edit, publish or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of Incentify, its agents or affiliates. Comments reflect the view and opinion of the person who posts such view or opinion. To the extent permitted by applicable laws Incentify shall not be responsible or liable for the Comments or for any loss cost, liability, damages or expenses caused and or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</li>
         <li>Incentify reserves the right to monitor all Comments and to remove any Comments which it considers in its absolute discretion to be inappropriate, offensive or otherwise in breach of these Terms and Conditions.</li>
@@ -124,7 +124,9 @@
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <div v-on:click = "showMission = !showMission" v-show = "showMission"><strong>Mission Statement</strong><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i></div>
+        <div v-on:click = "showMission = !showMission" v-show = "showMission">
+          <strong>Mission Statement</strong><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i>
+        </div>
          <div v-on:click = "showMission = !showMission" v-show = "!showMission"><strong>Mission</strong><i class="fa fa-minus is-pulled-right page-headings" aria-hidden="true"></i></div>
         <div v-show = "!showMission">
         <p>Our goal is to give people the motivation they need to be truly AWESOME!!!!!!!</p>
@@ -132,11 +134,7 @@
       </div>
     </div>
   </div>
-
-
 </div>
-
-
 
 </template>
 
@@ -162,7 +160,7 @@ export default {
   margin-right: 25px !important;
 }
 .page-title {
-  font-size: 40px; 
+  font-size: 40px;
   color: #587272;
 }
 .page-headings {
