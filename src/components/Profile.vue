@@ -8,20 +8,21 @@
   <div class="control card is-fullwidth">
     <div class="card-content">
       <label class="label"><h2 class="is-large title">name</h2></label>
-      <input class="input" type="text" disabled>
+      <input class="input" type="text" :disabled="formDisabled">
 
       <label class="label"><h2 class="">username</h2></label>
-      <input class="input" type="text" disabled>
+      <input class="input" type="text" :disabled="formDisabled">
 
       <label class="label"><h2 class="">password</h2></label>
-      <input class="input" type="password" disabled>
+      <input class="input" type="password" :disabled="formDisabled">
 
       <label class="label"><h2 class="">confirm password</h2></label>
-      <input class="input" type="password" disabled>
+      <input class="input" type="password" :disabled="formDisabled">
 
       <label class="label"><h2 class="">age</h2></label>
-      <input class="input" type="text" disabled>
-      <button class="button is-large red-nav">Edit</button>
+      <input class="input" type="text" :disabled="formDisabled">
+      <button class="button is-large red-nav" @click = "editProfile" v-show="formDisabled">Edit</button>
+      <button class="button is-large red-nav" @click = "submitProfile" v-show="!formDisabled">Save</button>
     </div>
   </div>
 </div>
