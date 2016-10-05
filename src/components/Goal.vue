@@ -1,6 +1,6 @@
 <template>
-	
-<div class="global-font-size">
+
+<div class="content">
     <div class="is-mobile lil-marg">
         <div class="has-text-right main-title">New Goal</div>
     </div>

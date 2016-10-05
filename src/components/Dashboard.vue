@@ -1,35 +1,33 @@
 <template>
 
-<div class="global-font-size">
+<div class="content is-large">
     <div class="is-mobile lil-marg">
         <div class="has-text-right page-title">Dashboard</div>
     </div>
     <div class="card is-fullwidth margin-dash">
         <div class="card-content">
             <div class="content">
-                <strong>Goal Name</strong> username with GoalProvider
+                <h1 class=""><strong>Goal Name</strong> username with GoalProvider</h1>
                 <progress class="progress is-small is-success" value="15" max="100">15%</progress>
-                percentage of goal completion%
+                <h3>percentage of goal completion%</h3>
             </div>
         </div>
     </div>
     <div class="card is-fullwidth margin-dash">
         <div class="card-content">
             <div class="content">
-                <strong>Treehouse</strong> comrww
-                <img src="../assets/treehouse-logo.png" class="is-pulled-right goal-provider-icon">
+                <h1><strong>Treehouse</strong> comrww <img src="../assets/treehouse-logo.png" class="is-pulled-right goal-provider-icon"></h1>
                 <progress class="progress is-small is-success" value="45" max="100">45%</progress>
-                45%
+                <h3>45%</h3>
             </div>
         </div>
     </div>
     <div class="card is-fullwidth margin-dash">
         <div class="card-content">
             <div class="content">
-                <strong>DuoLingo</strong> comrww
-                <img src="../assets/duolingo-logo.png" class="is-pulled-right goal-provider-icon">
+                <h1><strong>DuoLingo</strong> comrww <img src="../assets/duolingo-logo.png" class="is-pulled-right goal-provider-icon"></h1>
                 <progress class="progress is-small is-success" value="5" max="100">5%</progress>
-                5%
+                <h3>5%</h3>
             </div>
         </div>
     </div>
@@ -52,14 +50,14 @@ export default {
 
 <style lang="css" scoped>
 .margin-dash {
-	margin-top: 15px;
+	margin-top: 1rem;
 }
 .page-title {
-  font-size: 40px; 
+  font-size: 3rem;
   color: #587272;
 }
 .goal-provider-icon {
-  height: 50px; 
-  width: 50px;
+  height: 4rem;
+  width: 4rem;
 }
 </style>

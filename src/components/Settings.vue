@@ -1,16 +1,25 @@
 <template>
-  <div class="global-font-size">  
-	<div class="is-mobile lil-marg">
-  		<div class="has-text-right page-title">Settings</div>
+  <div class="content is-large">
+  	<div class="is-mobile lil-marg">
+  	  <div class="has-text-right page-title">Settings</div>
   	</div>
 
     <!-- Terms and Condition of Application Use -->
   <div class="card is-fullwidth margin-dash">
     <div class="card-content">
       <div class="content">
-        <div v-on:click = "showTerms = !showTerms" v-show = "showTerms"><strong>Terms & Conditions</strong><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i></div>
-         <div v-on:click = "showTerms = !showTerms" v-show = "!showTerms"><strong>Terms & Conditions</strong><i class="fa fa-minus is-pulled-right page-headings" aria-hidden="true"></i></div>
-      <div v-show = "!showTerms">
+        <div v-on:click = "showTerms = !showTerms" v-show = "showTerms">
+          <h1>
+            <strong>Terms & Conditions</strong>
+          </h1><i class="fa fa-plus is-pulled-right page-headings" aria-hidden="true"></i>
+        </div>
+
+        <div v-on:click = "showTerms = !showTerms" v-show = "!showTerms">
+          <h1>
+            <strong>Terms & Conditions</strong>
+          </h1><i class="fa fa-minus is-pulled-right page-headings" aria-hidden="true"></i>
+        </div>
+      <div v-show = "!showTerms" class="content">
       <p>These terms and conditions outline the rules and regulations for the use of  Incentify's Website. <br />
         <span style="text-transform: capitalize;">Incentify</span> is located at:<br />
         <address>
@@ -156,13 +165,16 @@ export default {
 .margin-dash {
   margin-top: 15px;
 }
+
 .lil-marg {
   margin-right: 25px !important;
 }
+
 .page-title {
   font-size: 40px;
   color: #587272;
 }
+
 .page-headings {
   font-size: 60px;
 }
