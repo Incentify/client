@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	
 <div class="global-font-size">
     <div class="is-mobile lil-marg">
@@ -92,6 +93,8 @@ export default {
     return {
       showTreehouseInfo: true,
       showDuoLingoInfo: true,
+      showTreehouseAmount: true,
+      showDuoAmount: true,
     };
   },
 };
@@ -129,8 +132,13 @@ export default {
     color: white !important;
     border-color: red !important;
   }
+<<<<<<< HEAD
   /*General Heigh Fix for Mobilization*/
   .h-fix {
+=======
+  /*Height Fix*/
+  .h-fix { 
+>>>>>>> goalanimation
     height: 100px !important;
   }
   .set-goal {
