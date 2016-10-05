@@ -3,12 +3,12 @@
     <!-- route outlet -->
     <top-branding></top-branding>
     <router-view class="wrapper"></router-view>
-    <Navbar class="Navbar-one"></Navbar>
+    <navbar class="navbar-one"></navbar>
   </div>
 </template>
 
 <script>
-  import Navbar from './components/Navbar';
+  import navbar from './components/navbar';
   import topBranding from './components/top-branding';
 
   require('bulma/bulma.sass');
@@ -16,7 +16,7 @@
 
   export default {
     components: {
-      Navbar,
+      navbar,
       topBranding,
     },
     replace: false,
@@ -24,15 +24,8 @@
 </script>
 
 <style>
-  /* body {
-    align-items: center;
-    justify-content: center;
-    padding: 5px !important;
-    flex-wrap: nowrap !important;
-    background-color: ghostwhite !important;
-  } */
 
-  .Navbar-one {
+  .navbar-one {
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -42,13 +35,7 @@
     height: 81vh;
     width: 100%;
   }
-/* 
-  .btn-padding {
-    padding: 10px !important;
-    font-size: 20px !important;
-    text-transform: uppercase !important;
-    height: 150px !important;
-  }
+/*
 
   .red-nav {
     color: red !important;
