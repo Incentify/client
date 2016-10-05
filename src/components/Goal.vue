@@ -1,82 +1,92 @@
+<<<<<<< HEAD
+<template>
+
+<div class="content">
 <template>	
 <div class="global-font-size">
     <div class="is-mobile lil-marg">
-        <div class="has-text-right main-title">New Goal</div>
+        <div class="has-text-right page-title">New Goal</div>
     </div>
-    <div class="card is-fullwidth margin-goal">
-        <div class="card-content">
-            <div class="content">
-                <div v-on:click="showTreehouseInfo = !showTreehouseInfo" v-show="showTreehouseInfo"><strong>Treehouse</strong><i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></div>
-                <div v-on:click="showTreehouseInfo = !showTreehouseInfo" v-show="!showTreehouseInfo"><strong>Treehouse</strong><i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></div>
-                <div v-show="!showTreehouseInfo">
-                    <p>Treehouse brings affordable technology education to people everywhere in order to help them achieve their dreams and change the world.</p>
-                    <p class="control has-addons">
-                        <a class="button red-inverse-nav btn-on-goal more-button-width">
-                            <span class="icon is-small"></span>
-                            <span><strong>incentive</strong></span></a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$5</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$25</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$50</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal more-button-width">
-                            <span>other</span>
-                        </a>
-                    </p>
-                    <p class="control has-addons has-addons-centered">
-                        <span>
-                  <span class="btn-on-goal set-goal formatting-around-dollar-sign">$</span>
-                        </span>
-                        <input class="input h-fix set-goal" type="text" placeholder="Amount of money">
-                        <a class="button is-primary red-nav btn-on-goal">
-                            <strong>set goal</strong>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card is-fullwidth margin-goal">
-        <div class="card-content">
-            <div class="content">
-                <div v-on:click="showDuoLingoInfo = !showDuoLingoInfo" v-show="showDuoLingoInfo"><strong>DuoLingo</strong><i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></div>
-                <div v-on:click="showDuoLingoInfo = !showDuoLingoInfo" v-show="!showDuoLingoInfo"><strong>DuoLingo</strong><i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></div>
-                <div v-show="!showDuoLingoInfo">
-                    <p>Learning with Duolingo is fun and addictive. Earn points for correct answers, race against the clock, and level up. Our bite-sized lessons are effective, and we have proof that it works.</p>
-                    <p class="control has-addons">
-                        <a class="button red-inverse-nav btn-on-goal more-button-width">
-                            <span class="icon is-small"></span>
-                            <span><strong>incentive</strong></span></a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$5</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$25</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal">
-                            <span>$50</span>
-                        </a>
-                        <a class="button red-nav btn-on-goal more-button-width">
-                            <span>other</span>
-                        </a>
-                    </p>
-                    <p class="control has-addons has-addons-centered">
-                        <span>
-                  <span class="btn-on-goal set-goal formatting-around-dollar-sign">$</span>
-                        </span>
-                        <input class="input h-fix set-goal" type="text" placeholder="Amount of money">
-                        <a class="button is-primary red-nav btn-on-goal">
-                            <strong>set goal</strong>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="animated slideInUp ">
+      <div class="card is-fullwidth margin-goal">
+          <div class="card-content ">
+              <div class="content">
+                  <div v-on:click="showTreehouseInfo = !showTreehouseInfo" v-show="showTreehouseInfo"><strong><span>Treehouse<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong></div>
+                  <div v-on:click="showTreehouseInfo = !showTreehouseInfo" v-show="!showTreehouseInfo"><strong><span>Treehouse<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong></div>
+                  <div v-show="!showTreehouseInfo" class="animated fadeIn">
+                      <p>Treehouse brings affordable technology education to people everywhere in order to help them achieve their dreams and change the world.</p>
+                      <p class="control has-addons">
+                          <a class="button red-inverse-nav btn-on-goal more-button-width">
+                              <span class="icon is-small"></span>
+                              <span><strong>incentive</strong></span></a>
+                          <a class="button red-nav btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 1}">
+                              <span @click="isActive.tab = 1">$5</span>
+                          </a>
+                          <a class="button red-nav btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 4}">
+                              <span @click="isActive.tab = 4">$25</span>
+                          </a>
+                          <a class="button red-nav btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 2}">
+                              <span @click="isActive.tab = 2">$50</span>
+                          </a>
+                          <a class="button red-nav btn-on-goal more-button-width" @click="showTreehouseAmount = !showTreehouseAmount" v-bind:class="{ 'is-active': isActive.tab === 3}">
+                              <span @click="isActive.tab = 3">other</span>
+                          </a>
+                           <a class="button red-nav btn-on-goal more-button-width submitButton">
+                                  <button>Submit</button>
+                           </a>
+                      </p>
+                      <div class="animated fadeIn" v-show="!showTreehouseAmount">
+                        <p class="control has-addons has-addons-centered">
+                          <input class="input" type="text" placeholder="Amount of money">
+                          <a class="button is-primary red-nav btn-on-goal">
+                              <strong>set goal</strong>
+                          </a>
+                        </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card is-fullwidth margin-goal">
+          <div class="card-content goal-vertical-spacing">
+              <div class="content">
+                  <div v-on:click="showDuoLingoInfo = !showDuoLingoInfo" v-show="showDuoLingoInfo"><strong><span>DuoLingo<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong></i></div>
+                  <div v-on:click="showDuoLingoInfo = !showDuoLingoInfo" v-show="!showDuoLingoInfo"><strong><span>DuoLingo<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong></div>
+                  <div v-show="!showDuoLingoInfo" class="animated fadeIn">
+                      <p>Learning with Duolingo is fun and addictive. Earn points for correct answers, race against the clock, and level up. Our bite-sized lessons are effective, and we have proof that it works.</p>
+                          <p class="control has-addons">
+                              <a class="button red-inverse-nav btn-on-goal more-button-width">
+                                  <span class="icon is-small"></span>
+                                  <span><strong>incentive</strong></span></a>
+                              <a class="button btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 1}">
+                                  <span @click="isActive.tab = 1">$5</span>
+                              </a>
+                              <a class="button btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 4}">
+                                  <span @click="isActive.tab = 4">$25</span>
+                              </a>
+                              <a class="button btn-on-goal" v-bind:class="{ 'is-active': isActive.tab === 2}">
+                                  <span @click="isActive.tab = 2">$50</span>
+                              </a>
+                              <a class="button btn-on-goal more-button-width" @click="showDuoAmount = !showDuoAmount" v-bind:class="{ 'is-active': isActive.tab === 3}">
+                                  <span @click="isActive.tab = 3">other</span>
+                              </a>
+                               <a class="button red-nav btn-on-goal more-button-width submitButton">
+                                  <button>Submit</button>
+                              </a>
+                          </p>
+                          <div class="animated fadeIn" v-show="!showDuoAmount">
+                            <p class="control has-addons has-addons-centered">                 
+                                <input class="input" type="text" placeholder="Amount of money">
+                                <a class="button is-primary red-nav btn-on-goal">
+                                    <strong>set goal</strong>
+                                </a>
+                            </p>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 
@@ -93,64 +103,32 @@ export default {
       showDuoLingoInfo: true,
       showTreehouseAmount: true,
       showDuoAmount: true,
+      isActive: {
+        tab: 1,
+      },
     };
   },
+  methods: {
+    changeTabColor() {
+      this.isActive = !this.isActive;
+    },
+  },
+
 };
 </script>
 
 <style lang="css" scoped>
-  .margin-goal {
-    margin-top: 15px !important;
-  }
-  .btn-on-goal {
-    padding: 10px !important;
-    font-size: 20px !important;
-    text-transform: uppercase !important;
-    height: 100px !important;
-    width: 200px !important;
-    font-size: 30px !important;
-  }
-  .red-inverse-nav {
-    color: white !important;
-    border-color: red !important;
-    background-color: red !important;
-  }
-  .red-inverse-nav:hover {
-    background-color: red !important;
-    color: white !important;
-    border-color: red !important;
-  }
-  .red-inverse-nav:focus {
-    background-color: red !important;
-    color: white !important;
-    border-color: red !important;
-  }
-  .red-inverse-nav:active {
-    background-color: red !important;
-    color: white !important;
-    border-color: red !important;
-  }
-  /*General Heigh Fix for Mobilization*/
-  .h-fix {
-    height: 100px !important;
-  }
-  .set-goal {
-    font-size: 40px !important;
-    line-height: 200%;
-  }
-  .main-title {
-    font-size: 40px; 
+    .page-title {
+    font-size: 1.8rem;
     color: #587272;
+    margin-right: 2%;
+    padding-bottom: 2%;
   }
-  .set-icon-size {
-    font-size: 60px;
-  }
-  .more-button-width {
-    width: 300px !important;
-  }
-  .formatting-around-dollar-sign {
-    color: red !important; 
-    text-align: center !important; 
-    width: 100px !important;
-  }
+   .goal-vertical-spacing {
+      margin-top: .75rem;
+    }
+
+    .submitButton {
+      margin-left: 5%;
+    }
 </style>
