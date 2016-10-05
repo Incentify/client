@@ -150,8 +150,6 @@
 <script>
 export default {
 
-  // name: 'component_name',
-
   data() {
     return {
       showTerms: true,
@@ -163,19 +161,19 @@ export default {
 
 <style lang="css" scoped>
 .margin-dash {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .lil-marg {
-  margin-right: 25px !important;
+  /* margin-right: 25px !important; */
 }
 
 .page-title {
-  font-size: 40px;
+  /* font-size: 40px; */
   color: #587272;
 }
 
 .page-headings {
-  font-size: 60px;
+  /* font-size: 60px; */
 }
 </style>
