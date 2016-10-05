@@ -14,7 +14,6 @@
   require('bulma/bulma.sass');
   require('font-awesome/css/font-awesome.css');
   require('animate.css/animate.css');
-
   export default {
     components: {
       navbar,
