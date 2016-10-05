@@ -5,25 +5,26 @@
     <div class="has-text-right page-title">Profile Settings</div>
   </div>
 
-  <div class="control box profileForm">
-    <label class="label"><h1 class="is-large title">name</h1></label>
-    <input placeholder="Ryan Wilson" class="input is-large" type="text" disabled>
+  <div class="control card is-fullwidth">
+    <div class="card-content">
+      <label class="label"><h2 class="is-large title">name</h2></label>
+      <input class="input" type="text" disabled>
 
-    <label class="label"><h1 class="is-large title">username</h1></label>
-    <input placeholder="comrww" class="input is-large" type="text" disabled>
+      <label class="label"><h2 class="">username</h2></label>
+      <input class="input" type="text" disabled>
 
-    <label class="label"><h1 class="is-large title">password</h1></label>
-    <input placeholder="••••••" class="input is-large" type="password" disabled>
+      <label class="label"><h2 class="">password</h2></label>
+      <input class="input" type="password" disabled>
 
-    <label class="label"><h1 class="is-large title">confirm password</h1></label>
-    <input placeholder="••••••" class="input is-large" type="password" disabled>
+      <label class="label"><h2 class="">confirm password</h2></label>
+      <input class="input" type="password" disabled>
 
-    <label class="label"><h1 class="is-large title">age</h1></label>
-    <input placeholder="25" class="input is-large" type="text" disabled>
-    <button class="button red-nav edit-btn">Edit</button>
+      <label class="label"><h2 class="">age</h2></label>
+      <input class="input" type="text" disabled>
+      <button class="button is-large red-nav">Edit</button>
+    </div>
   </div>
 </div>
-
 </template>
 
 <script>
@@ -51,25 +52,10 @@ export default {
     margin-bottom: 2%;
   }
 
-  .profileForm{
-    font-size: 2rem;
-  }
-
-	.edit-btn {
-    padding: .8rem;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    height: 7rem;
-    width: 14rem;
-    font-size: 2.5rem;
-	}
-
-	.btn-padding {
-		padding-bottom: 1rem;
-	}
-
 	.page-title {
-		font-size: 3rem;
+		font-size: 1.8rem;
 		color: #587272;
+    margin-right: 2%;
+    padding-bottom: 2%;
 	}
 </style>
