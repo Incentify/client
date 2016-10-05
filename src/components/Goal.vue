@@ -99,15 +99,15 @@ export default {
 
 <style lang="css" scoped>
   .margin-goal {
-    margin-top: 15px !important;
+    /* margin-top: 15px !important; */
   }
   .btn-on-goal {
-    padding: 10px !important;
-    font-size: 20px !important;
+    /* padding: 10px !important; */
+    /* font-size: 20px !important; */
     text-transform: uppercase !important;
-    height: 100px !important;
-    width: 200px !important;
-    font-size: 30px !important;
+    /* height: 100px !important; */
+    /* width: 200px !important; */
+    /* font-size: 30px !important; */
   }
   .red-inverse-nav {
     color: white !important;
@@ -131,25 +131,25 @@ export default {
   }
   /*General Heigh Fix for Mobilization*/
   .h-fix {
-    height: 100px !important;
+    /* height: 100px !important; */
   }
   .set-goal {
-    font-size: 40px !important;
+    /* font-size: 40px !important; */
     line-height: 200%;
   }
   .main-title {
-    font-size: 40px; 
+    /* font-size: 40px;  */
     color: #587272;
   }
   .set-icon-size {
-    font-size: 60px;
+    /* font-size: 60px; */
   }
   .more-button-width {
-    width: 300px !important;
+    /* width: 300px !important; */
   }
   .formatting-around-dollar-sign {
     color: red !important; 
     text-align: center !important; 
-    width: 100px !important;
+    /* width: 100px !important; */
   }
 </style>
