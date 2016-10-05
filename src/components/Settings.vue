@@ -160,20 +160,20 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.margin-dash {
-  /* margin-top: 15px; */
-}
+  .margin-dash {
+    /* margin-top: 15px; */
+  }
 
-.lil-marg {
-  /* margin-right: 25px !important; */
-}
+  .lil-marg {
+    /* margin-right: 25px !important; */
+  }
 
-.page-title {
-  /* font-size: 40px; */
-  color: #587272;
-}
+  .page-title {
+    /* font-size: 40px; */
+    color: #587272;
+  }
 
-.page-headings {
-  /* font-size: 60px; */
-}
+  .page-headings {
+    /* font-size: 60px; */
+  }
 </style>

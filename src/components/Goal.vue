@@ -135,7 +135,7 @@ export default {
   }
   .set-goal {
     /* font-size: 40px !important; */
-    line-height: 200%;
+    /* line-height: 200%; */
   }
   .main-title {
     /* font-size: 40px;  */
@@ -149,7 +149,7 @@ export default {
   }
   .formatting-around-dollar-sign {
     color: red !important; 
-    text-align: center !important; 
+    /* text-align: center !important;  */
     /* width: 100px !important; */
   }
 </style>
