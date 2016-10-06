@@ -25,6 +25,10 @@
 
 <style>
 
+  .nav{
+    margin-bottom: 4rem;
+  }
+
   .navbar-one {
     position: fixed;
     bottom: 0px;
@@ -34,5 +38,11 @@
   .wrapper {
     height: 81vh;
     width: 100%;
+  }
+
+  /* attempt to make sticky headers/footers */
+  #app{
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
   }
 </style>

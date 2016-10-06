@@ -1,5 +1,5 @@
 <template>
-	<nav class="box box-slim">
+	<nav class="box box-slim stickyHeader">
       <a class="" href="#"><img class="logo-size" src="../assets/incentify-logo-rectangle.png"></a>
   </nav>
 </template>
@@ -16,6 +16,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  /* sticky header hack */
+  .stickyHeader{
+    position: fixed;
+    top: 0;
+    width:  100%;
+  }
 
   .logo-size{
     width: 12rem;
