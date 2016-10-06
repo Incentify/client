@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- route outlet -->
-    <top-branding></top-branding>
+    <top-branding class="nav"></top-branding>
     <router-view class="wrapper"></router-view>
     <navbar class="navbar-one"></navbar>
   </div>
@@ -24,6 +24,7 @@
 </script>
 
 <style>
+
   .navbar-one {
     position: fixed;
     bottom: 0px;
