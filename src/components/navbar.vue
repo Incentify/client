@@ -40,7 +40,7 @@
     data() {
       return {
         isActive: {
-          tab: 1,
+          tab: 0,
         },
       };
     },

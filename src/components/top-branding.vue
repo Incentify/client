@@ -1,13 +1,11 @@
 <template>
-	<div class="box box-slim">
-      <a class="btn red-nav" href="#"><img class="logo-size" src="../assets/incentify-logo-rectangle.png"></a>
-  </div>
+	<nav class="box box-slim">
+      <a class="" href="#"><img class="logo-size" src="../assets/incentify-logo-rectangle.png"></a>
+  </nav>
 </template>
 
 <script>
 export default {
-
-  name: 'component_name',
 
   data() {
     return {
