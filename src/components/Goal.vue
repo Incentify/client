@@ -4,7 +4,8 @@
   <div class="is-mobile">
     <div class="has-text-right page-title">New Goal</div>
   </div>
-  <div class="animated slideInUp card is-fullwidth">
+
+  <div class="card is-fullwidth">
     <div class="card-content">
       <div class="content">
         <div v-on:click="showIntegration = !showIntegration" v-show="showIntegration">
@@ -46,7 +47,7 @@
 
         <div class="animated fadeIn" v-show="!showIntegration$Input">
           <p class="control has-addons has-addons-centered">
-            <input class="input" type="text" placeholder="Amount of money">
+            <input class="input" type="text" placeholder="Amount of money" value="{{incentiveAmount}}">
             <a class="button is-primary  ">
               <strong>set goal</strong>
             </a>
