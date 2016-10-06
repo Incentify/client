@@ -1,5 +1,4 @@
 <template>
-
 <div class="content">
 <template>	
 <div class="global-font-size">
