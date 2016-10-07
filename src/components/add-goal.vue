@@ -26,7 +26,7 @@
   <div class="animated fadeIn" v-show="!showIntegration$Input">
     <p class="control has-addons has-addons-centered">
       <input class="input" type="text" placeholder="Amount of money" value="{{incentiveAmount}}">
-      <a class="button is-primary  ">
+      <a class="button is-active">
         <strong>set goal</strong>
       </a>
     </p>
