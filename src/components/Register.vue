@@ -6,12 +6,22 @@
       <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
     </a>
     <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
+      <span class="icon"><i class="fa fa-email"></i></span> <span>Email</span>
     </a>
     <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
     </a>
   </div>
+
+  <label for="">email</label>
+  <input type="text" class="input">
+
+  <label for="">enter a password</label>
+  <input type="password" class="input">
+
+  <label for="">confirm password</label>
+  <input type="password" class="input">
+  <button class="button" @click=""></button>
 </template>
 
 <script>

@@ -12,8 +12,9 @@
   import topBranding from './components/top-branding';
 
   require('bulma/bulma.sass');
-  require('font-awesome/css/font-awesome.css');
   require('animate.css/animate.css');
+  require('font-awesome/css/font-awesome.css');
+
   export default {
     components: {
       navbar,
@@ -25,6 +26,10 @@
 
 <style>
 
+  .nav{
+    margin-bottom: 4rem;
+  }
+
   .navbar-one {
     position: fixed;
     bottom: 0px;
@@ -34,5 +39,11 @@
   .wrapper {
     height: 81vh;
     width: 100%;
+  }
+
+  /* attempt to make sticky headers/footers */
+  #app{
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
   }
 </style>
