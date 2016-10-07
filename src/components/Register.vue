@@ -12,6 +12,16 @@
       <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
     </a>
   </div>
+
+  <label for="">email</label>
+  <input type="text" class="input">
+
+  <label for="">enter a password</label>
+  <input type="password" class="input">
+
+  <label for="">confirm password</label>
+  <input type="password" class="input">
+  <button class="button" @click=""></button>
 </template>
 
 <script>

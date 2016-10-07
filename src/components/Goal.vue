@@ -35,10 +35,6 @@ export default {
   data() {
     return {
       showIntegration: true,
-      showIntegration$Input: true,
-      isActive: {
-        tab: 1,
-      },
     };
   },
   methods: {

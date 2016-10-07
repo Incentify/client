@@ -12,8 +12,9 @@
   import topBranding from './components/top-branding';
 
   require('bulma/bulma.sass');
-  require('font-awesome/css/font-awesome.css');
   require('animate.css/animate.css');
+  require('font-awesome/css/font-awesome.css');
+
   export default {
     components: {
       navbar,
