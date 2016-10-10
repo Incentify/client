@@ -21,7 +21,7 @@
 
   <label for="">confirm password</label>
   <input type="password" class="input">
-  <button class="button" @click=""></button>
+  <button class="button" @click="">Login</button>
 </template>
 
 <script>

@@ -26,6 +26,7 @@
     </div>
   </div>
 </div>
+<button v-link="{path:'/register'}" class="button is-danger is-fullwidth">Logout</button>
 </template>
 
 <script>
