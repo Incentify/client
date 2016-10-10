@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="colorBlock">choose a goal</div>
+    <div class="colorBlock">CHOOSE A GOAL</div>
     <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points">
-    <div class="colorBlock">choose incentive</div>
+    <div class="colorBlock">CHOOSE INCENTIVE</div>
 
-    <p class="control has-addons flexy">
+    <p class="control has-addons flexy incentiveOptions">
       <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 1}">
         <span @click="activeTab.tab = 1">$5</span>
       </a>
@@ -31,6 +31,7 @@
       </a>
     </p>
   </div>
+  <button class="button is-info is-fullwidth">Commit</button>
 </template>
 
 <script>
@@ -59,7 +60,10 @@
   }
 
   .input{
-    margin-bottom: .75rem;
+    margin-bottom: 2rem;
+  }
+    .incentiveOptions{
+    margin-bottom: 2rem;
   }
 
   .colorBlock{
@@ -67,5 +71,6 @@
     text-align: center;
     border-radius: 3px;
     margin-bottom: 3%;
+    padding: 1%;
   }
 </style>
