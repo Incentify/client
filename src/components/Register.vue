@@ -1,6 +1,17 @@
 <template>
   <div>
     <img class="logo" src="../assets/incentify-logo-square_360.png">
+    <div class="notification is-success animated fadeIn" vue-show="success">
+      <button class="delete"></button>
+        Success! Redirecting to the app...
+    </div>
+
+    <div class="notification is-danger animated fadeIn" vue-show="failure">
+      <button class="delete"></button>
+        Either your Email address is already taken or your passwords did not match.
+    </div>
+
+
 
     <div class="level is-mobile">
       <a class="button btn-padding level-item is-medium">
@@ -23,20 +34,6 @@
     <label for="">confirm password</label>
     <input type="password" class="input" v-model="login.confirmPassword">
     <button class="button" @click="registerUser()">Register</button>
-
-    <div class="notification is-success" vue-show="success">
-      <button class="delete"></button>
-      Success lorem ipsum dolor sit amet, consectetur
-      adipiscing elit lorem ipsum dolor sit amet,
-      consectetur adipiscing elit
-    </div>
-
-    <div class="notification is-danger" vue-show="failure">
-      <button class="delete"></button>
-      Danger lorem ipsum dolor sit amet, consectetur
-      adipiscing elit lorem ipsum dolor sit amet,
-      consectetur adipiscing elit
-    </div>
   </div>
 </template>
 
@@ -49,8 +46,8 @@ export default {
         password: '',
         confirmPassword: '',
       },
-      success: false,
-      failure: false,
+      success: true,
+      failure: true,
     };
   },
   methods: {
@@ -62,6 +59,7 @@ export default {
         this.$router.go('/goal');
       }, (response) => {
         // error callback
+        this.failure = !this.failure
         console.log(response.status);
         console.log(response.statusText);
       });
