@@ -1,27 +1,43 @@
 <template>
-  <img class="logo" src="../assets/incentify-logo-square_360.png">
+  <div>
+    <img class="logo" src="../assets/incentify-logo-square_360.png">
 
-  <div class="level is-mobile">
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
-    </a>
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
-    </a>
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
-    </a>
+    <div class="level is-mobile">
+      <a class="button btn-padding level-item is-medium">
+        <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
+      </a>
+      <a class="button btn-padding level-item is-medium">
+        <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
+      </a>
+      <a class="button btn-padding level-item is-medium">
+        <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
+      </a>
+    </div>
+
+    <label for="">email</label>
+    <input type="email" class="input" v-model="login.email">
+
+    <label for="">enter a password</label>
+    <input type="password" class="input" v-model="login.password">
+
+    <label for="">confirm password</label>
+    <input type="password" class="input" v-model="login.confirmPassword">
+    <button class="button" @click="registerUser()">Register</button>
+
+    <div class="notification is-success" vue-show="success">
+      <button class="delete"></button>
+      Success lorem ipsum dolor sit amet, consectetur
+      adipiscing elit lorem ipsum dolor sit amet,
+      consectetur adipiscing elit
+    </div>
+
+    <div class="notification is-danger" vue-show="failure">
+      <button class="delete"></button>
+      Danger lorem ipsum dolor sit amet, consectetur
+      adipiscing elit lorem ipsum dolor sit amet,
+      consectetur adipiscing elit
+    </div>
   </div>
-
-  <label for="">email</label>
-  <input type="email" class="input" v-model="login.email">
-
-  <label for="">enter a password</label>
-  <input type="password" class="input" v-model="login.password">
-
-  <label for="">confirm password</label>
-  <input type="password" class="input" v-model="login.confirmPassword">
-  <button class="button" @click="registerUser()">Register</button>
 </template>
 
 <script>
@@ -33,6 +49,8 @@ export default {
         password: '',
         confirmPassword: '',
       },
+      success: false,
+      failure: false,
     };
   },
   methods: {
@@ -41,6 +59,7 @@ export default {
         // success callback
         console.log(response.status);
         console.log(response.statusText);
+        this.$router.go('/goal');
       }, (response) => {
         // error callback
         console.log(response.status);
