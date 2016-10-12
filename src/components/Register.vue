@@ -6,7 +6,7 @@
       <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
     </a>
     <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-email"></i></span> <span>Email</span>
+      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
     </a>
     <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
