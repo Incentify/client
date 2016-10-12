@@ -1,13 +1,13 @@
 <template>
   <div>
     <img class="logo" src="../assets/incentify-logo-square_360.png">
-    <div class="notification is-success animated fadeIn" vue-show="success">
-      <button class="delete"></button>
+    <div class="notification is-success animated fadeIn" v-show="success">
+      <button class="delete" @click="success = !success"></button>
         Success! Redirecting to the app...
     </div>
 
-    <div class="notification is-danger animated fadeIn" vue-show="failure">
-      <button class="delete"></button>
+    <div class="notification is-danger animated fadeIn" v-show="failure">
+      <button class="delete" @click="failure = !failure"></button>
         Either your Email address is already taken or your passwords did not match.
     </div>
 
@@ -46,22 +46,24 @@ export default {
         password: '',
         confirmPassword: '',
       },
-      success: true,
-      failure: true,
+      success: false,
+      failure: false,
     };
   },
   methods: {
     registerUser() {
       this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
         // success callback
-        console.log(response.status);
-        console.log(response.statusText);
-        this.$router.go('/goal');
+        console.log(response);
+        const that = this;
+        this.success = !this.success;
+        setTimeout(() => {
+          that.$router.go('/goal');
+        }, 2000);
       }, (response) => {
         // error callback
-        this.failure = !this.failure
-        console.log(response.status);
-        console.log(response.statusText);
+        console.log(response);
+        this.failure = !this.failure;
       });
     },
   },
