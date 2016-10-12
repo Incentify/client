@@ -2,7 +2,7 @@
   <div id="app">
     <!-- route outlet -->
     <top-branding class="nav"></top-branding>
-    <router-view class="wrapper"></router-view>
+    <router-view></router-view>
     <navbar class="navbar-one"></navbar>
   </div>
 </template>

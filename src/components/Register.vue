@@ -14,32 +14,46 @@
   </div>
 
   <label for="">email</label>
-  <input type="text" class="input">
+  <input type="email" class="input" v-model="login.email">
 
   <label for="">enter a password</label>
-  <input type="password" class="input">
+  <input type="password" class="input" v-model="login.password">
 
   <label for="">confirm password</label>
-  <input type="password" class="input">
-  <button class="button" @click="">Login</button>
+  <input type="password" class="input" v-model="login.confirmPassword">
+  <button class="button" @click="registerUser()">Register</button>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      login: {
+        email: '',
+        password: '',
+        confirmPassword: '',
+      },
     };
+  },
+  methods: {
+    registerUser() {
+      this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
+        // success callback
+        console.log(response.status);
+        console.log(response.statusText);
+      }, (response) => {
+        // error callback
+        console.log(response.status);
+        console.log(response.statusText);
+      });
+    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .wrapper {
-    /* height:100vh; */
     width: 100%;
-    /* background:ghostwhite; */
-    /* position: absolute; */
   }
 
   .logo {
