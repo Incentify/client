@@ -13,7 +13,7 @@
 
   require('bulma/bulma.sass');
   require('animate.css/animate.css');
-  require('font-awesome/css/font-awesome.css');
+  require('!style!css!sass!font-awesome/scss/font-awesome.scss');
 
   export default {
     components: {
