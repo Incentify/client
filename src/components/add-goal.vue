@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div class="colorBlock">CHOOSE A GOAL</div>
+    <div class="colorBlock">Type Your {{tempData.name}} Username</div>
+    <input class="input " type="text">
+
+    <div class="colorBlock">Choose A Goal</div>
     <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points">
-    <div class="colorBlock">CHOOSE INCENTIVE</div>
+    <div class="colorBlock">Choose Incentive</div>
 
     <p class="control has-addons flexy incentiveOptions">
       <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 1}">
