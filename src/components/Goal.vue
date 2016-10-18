@@ -5,9 +5,9 @@
     <div class="has-text-right page-title">New Goal</div>
   </div>
 
-  <div class="card is-fullwidth">
+  <div class="card is-fullwidth integrationPanel" v-for="integration in integrations">
     <div class="card-content">
-      <div class="content" v-for="integration in integrations">
+      <div class="content">
         <div v-on:click="integration.showIntegration = !integration.showIntegration" v-show="!integration.showIntegration">
           <strong><span>{{integration.name}}<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
         </div>
@@ -76,5 +76,9 @@ export default {
 
     .submitButton {
       margin-left: 5%;
+    }
+
+    .integrationPanel{
+      margin-bottom: .5rem;
     }
 </style>
