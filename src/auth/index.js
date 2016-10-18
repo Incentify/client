@@ -10,7 +10,8 @@ export default {
   // To log out, we just need to remove the token
   logout() {
     localStorage.removeItem('token')
-    this.user.authenticated = false
+    this.user.authenticated = false;
+    state.go('/register');
   },
 
   checkAuth() {
