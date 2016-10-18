@@ -23,11 +23,13 @@
   </div>
 </div>
 
+<!-- success toast -->
 <div class="notification is-success animated fadeIn" v-show="success">
   <button class="delete" @click="success = !success"></button>
     Success! Your profile has been updated.
 </div>
 
+<!-- failure toast -->
 <div class="notification is-danger animated fadeIn" v-show="failure">
   <button class="delete" @click="failure = !failure"></button>
     Error! Double check your password. That email may be taken. Try again.
@@ -73,6 +75,14 @@ export default {
       });
     },
   },
+  ready() {
+    // this.$http.get('http://localhost:3000/users', this.profile).then((response) => {
+    //     // success callback
+    //   }, (response) => {
+    //     // error callback
+    //     this.failure = !this.failure;
+    //   });
+  }
 };
 </script>
 

@@ -51,6 +51,9 @@ export default {
   methods: {
     registerUser() {
       this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
+        // server sends back JWT, we put it in localStorage
+        localStorage.setItem('token', response.body.token)
+
         // success callback
         this.success = !this.success;
         //binding this to use inside of setTimeout
@@ -70,6 +73,10 @@ export default {
 </script>
 
 <style scoped>
+  label{
+    padding-left: 25px;
+  }
+
   .wrapper {
     width: 100%;
   }

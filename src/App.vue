@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <!-- route outlet -->
-    <top-branding class="nav"></top-branding>
+    <top-branding class="header"></top-branding>
     <router-view></router-view>
-    <navbar class="navbar-one"></navbar>
+    <navbar class="navbar"></navbar>
   </div>
 </template>
 
 <script>
   import navbar from './components/navbar';
   import topBranding from './components/top-branding';
+  import Vue from 'vue';
+  import auth from './auth/index.js';
 
   require('bulma/bulma.sass');
   require('animate.css/animate.css');
@@ -21,27 +23,32 @@
       topBranding,
     },
     replace: false,
+    ready() {
+      Vue.http.interceptors.push((request, next) => {
+          var token = auth.getToken()
+          if(token && !request.headers.has("authorization")){
+            console.log(request.headers)
+            request.headers.append("authorization", "JWT " + token);
+          }
+        next();
+      });
+    }
   };
 </script>
 
 <style>
 
-  .nav{
+  .header{
     margin-bottom: 4rem;
   }
 
-  .navbar-one {
+  .navbar {
     position: fixed;
     bottom: 0px;
     width: 100%;
   }
 
-  .wrapper {
-    height: 81vh;
-    width: 100%;
-  }
-
-  /* attempt to make sticky headers/footers */
+  /* this makes the sticky headers/footers without covering up the content */
   #app{
     margin-top: 5rem;
     margin-bottom: 3.5rem;
