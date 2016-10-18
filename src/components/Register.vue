@@ -62,7 +62,7 @@ export default {
         //2 second timer before redirect
         setTimeout(() => {
           that.$router.go('/goal');
-        }, 2000);
+        }, 1200);
       }, (response) => {
         // error callback
         this.failure = !this.failure;
