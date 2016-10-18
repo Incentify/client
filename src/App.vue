@@ -27,7 +27,6 @@
       Vue.http.interceptors.push((request, next) => {
           var token = auth.getToken()
           if(token && !request.headers.has("authorization")){
-            console.log(request.headers)
             request.headers.append("authorization", "JWT " + token);
           }
         next();
