@@ -75,7 +75,7 @@ export default {
       });
     },
   },
-  ready() {
+  created() {
     this.$http.get('http://localhost:3000/users').then((response) => {
       // success callback
       console.log(response);
