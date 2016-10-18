@@ -1,12 +1,22 @@
 <template>
+<div>
   <img class="logo" src="../assets/incentify-logo-square_360.png">
+  <div class="notification is-success animated fadeIn" v-show="success">
+    <button class="delete" @click="success = !success"></button>
+      Success! Redirecting to the app...
+  </div>
+
+  <div class="notification is-danger animated fadeIn" v-show="failure">
+    <button class="delete" @click="failure = !failure"></button>
+      Either your Email address is already taken or your passwords did not match.
+  </div>
 
   <div class="level is-mobile">
     <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
     </a>
     <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-email"></i></span> <span>Email</span>
+      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
     </a>
     <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
@@ -14,32 +24,61 @@
   </div>
 
   <label for="">email</label>
-  <input type="text" class="input">
+  <input type="email" class="input" v-model="login.email">
 
   <label for="">enter a password</label>
-  <input type="password" class="input">
+  <input type="password" class="input" v-model="login.password">
 
   <label for="">confirm password</label>
-  <input type="password" class="input">
-  <button class="button" @click="">Login</button>
+  <input type="password" class="input" v-model="login.confirmPassword">
+  <button class="button" @click="registerUser()">Register</button>
+</div>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      login: {
+        email: '',
+        password: '',
+        confirmPassword: '',
+      },
+      success: false,
+      failure: false,
     };
+  },
+  methods: {
+    registerUser() {
+      this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
+        // server sends back JWT, we put it in localStorage
+        localStorage.setItem('token', response.body.token)
+
+        // success callback
+        this.success = !this.success;
+        //binding this to use inside of setTimeout
+        const that = this;
+
+        //2 second timer before redirect
+        setTimeout(() => {
+          that.$router.go('/goal');
+        }, 1200);
+      }, (response) => {
+        // error callback
+        this.failure = !this.failure;
+      });
+    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  label{
+    padding-left: 25px;
+  }
+
   .wrapper {
-    /* height:100vh; */
     width: 100%;
-    /* background:ghostwhite; */
-    /* position: absolute; */
   }
 
   .logo {

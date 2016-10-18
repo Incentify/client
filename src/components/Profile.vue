@@ -1,39 +1,62 @@
 <template>
+<div>
+  <div class="content">
+    <div class="">
+      <div class="has-text-right page-title">Profile Settings</div>
+    </div>
 
-<div class="content">
-  <div class="">
-    <div class="has-text-right page-title">Profile Settings</div>
-  </div>
+    <div class="control card is-fullwidth">
+      <div class="card-content">
 
-  <div class="control card is-fullwidth">
-    <div class="card-content">
-      <label class="label"><h2 class="is-large title">name</h2></label>
-      <input class="input" type="text" :disabled="formDisabled">
+        <label class="label"><h2 class="">Email</h2></label>
+        <input class="input" type="email" :disabled="formDisabled" v-model="profile.email" placeholder="{{profileData.email}}">
 
-      <label class="label"><h2 class="">username</h2></label>
-      <input class="input" type="text" :disabled="formDisabled">
+        <label class="label"><h2 class="">password</h2></label>
+        <input class="input" type="password" :disabled="formDisabled" placeholder="••••" v-model="data.password">
 
-      <label class="label"><h2 class="">password</h2></label>
-      <input class="input" type="password" :disabled="formDisabled">
+        <label class="label"><h2 class="">confirm password</h2></label>
+        <input class="input" type="password" :disabled="formDisabled" placeholder="••••" v-model="data.confirmPassword">
 
-      <label class="label"><h2 class="">confirm password</h2></label>
-      <input class="input" type="password" :disabled="formDisabled">
-
-      <label class="label"><h2 class="">age</h2></label>
-      <input class="input" type="text" :disabled="formDisabled">
-      <button class="button is-large red-nav" @click = "editProfile" v-show="formDisabled">Edit</button>
-      <button class="button is-large red-nav" @click = "submitProfile" v-show="!formDisabled">Save</button>
+        <button class="button is-large red-nav" @click = "editProfile" v-show="formDisabled">Edit</button>
+        <button class="button is-large red-nav" @click = "submitProfile" v-show="!formDisabled">Save</button>
+      </div>
     </div>
   </div>
+
+  <button @click="logout()" class="button is-danger is-fullwidth">Logout</button>
+
+  <!-- success toast -->
+  <div class="notification is-success animated fadeIn" v-show="success">
+    <button class="delete" @click="success = !success"></button>
+      Success! Your profile has been updated.
+  </div>
+
+  <!-- failure toast -->
+  <div class="notification is-danger animated fadeIn" v-show="failure">
+    <button class="delete" @click="failure = !failure"></button>
+      Error! Double check your password. That email may be taken. Try again.
+  </div>
+
 </div>
-<button v-link="{path:'/register'}" class="button is-danger is-fullwidth">Logout</button>
 </template>
 
 <script>
+
+
 export default {
   data() {
     return {
       formDisabled: true,
+      profile: {
+        email: '',
+        password: '',
+        confirmPassword: null,
+      },
+      profileData: {
+        email: '',
+      },
+      success: false,
+      failure: false,
     };
   },
   methods: {
@@ -42,9 +65,26 @@ export default {
     },
     submitProfile() {
       // vue-resource POST of new user data
-      this.formDisabled = !this.formDisabled;
+      this.$http.put('http://localhost:3000/users', this.profile).then((response) => {
+        // success callback
+        this.formDisabled = !this.formDisabled;
+        this.success = !this.success;
+      }, (response) => {
+        // error callback
+        this.failure = !this.failure;
+      });
     },
   },
+  created() {
+    this.$http.get('http://localhost:3000/users').then((response) => {
+      // success callback
+      console.log(response);
+      this.profileData.email = response.body[0].email;
+    }, (response) => {
+      // error callback
+      this.failure = !this.failure;
+    });
+  }
 };
 </script>
 

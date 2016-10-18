@@ -24,9 +24,8 @@
     </div>
   </div>
 </div>
-
-
 </template>
+
 <script>
 import addGoal from './add-goal.vue';
 

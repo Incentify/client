@@ -11,15 +11,15 @@
       </li>
 
       <!-- Goal -->
-      <li v-bind:class="{ 'is-active': isActive.tab === 4}">
-        <a v-link="{path:'goal'}" @click="isActive.tab = 4">
+      <li v-bind:class="{ 'is-active': isActive.tab === 2}">
+        <a v-link="{path:'goal'}" @click="isActive.tab = 2">
           <span class="icon"><i class="fa fa-plus navbar-font-size" aria-hidden="true"></i></span>
         </a>
       </li>
 
       <!-- Profile -->
-      <li v-bind:class="{ 'is-active': isActive.tab === 2}">
-        <a v-link="{path:'profile'}" @click="isActive.tab = 2">
+      <li v-bind:class="{ 'is-active': isActive.tab === 3}">
+        <a v-link="{path:'profile'}" @click="isActive.tab = 3">
           <span class="icon"><i class="fa fa-user navbar-font-size" aria-hidden="true"></i></span>
         </a>
       </li>
