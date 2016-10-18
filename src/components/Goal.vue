@@ -7,17 +7,17 @@
 
   <div class="card is-fullwidth">
     <div class="card-content">
-      <div class="content">
+      <div class="content" v-for="integration in integrations">
         <div v-on:click="showIntegration = !showIntegration" v-show="showIntegration">
-          <strong><span>{{data.short_name}} data.short_name<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
+          <strong><span>{{integration.name}}<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
         </div>
 
         <div v-on:click="showIntegration = !showIntegration" v-show="!showIntegration">
-          <strong><span>{{Treehouse}} data.short_name<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
+          <strong><span>{{integration.name}}<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
         </div>
 
         <div v-show="!showIntegration" class="animated fadeIn">
-          <p>{{data.description}} data.description</p>
+          <p>{{integration.description}}</p>
           <add-goal></add-goal>
         </div>
       </div>
@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       showIntegration: true,
+      integrations: "",
     };
   },
   methods: {
@@ -44,7 +45,18 @@ export default {
   components: {
     addGoal,
   },
+  ready() {
+    this.$http.get('http://localhost:3000/integrations').then((response) => {
+        // success callback
+        console.log(response)
+        this.integrations = response.body
+      }, (response) => {
+        // error callback
+        this.failure = !this.failure;
+      });
+  }
 };
+
 </script>
 
 <style lang="css" scoped>
