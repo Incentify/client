@@ -1,10 +1,9 @@
 <template>
-  <div id="app" >
+  <div id="app" v-bind:class="{ 'no-margin': $route.path === '/' }">
     <!-- route outlet -->
-    <top-branding class="header" ></top-branding>
+    <top-branding class="header" v-show="$route.path !== '/'" ></top-branding>
     <router-view></router-view>
-      <navbar class="navbar" v-show="$route.path !== '/register'"></navbar>
-
+      <navbar class="navbar" v-show="$route.path !== '/'"></navbar>
   </div>
 </template>
 
@@ -37,6 +36,9 @@
 </script>
 
 <style>
+  .no-margin {
+    margin: 0 !important;
+  }
 
   .header{
     margin-bottom: 4rem;
@@ -53,4 +55,14 @@
     margin-top: 5rem;
     margin-bottom: 3.5rem;
   }
+ 
+    .is-success {
+    background-color: #00856d;
+  }
+  
+    .is-primary {
+    background-color: #61cbec;
+  }
+
+
 </style>

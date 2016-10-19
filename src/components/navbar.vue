@@ -57,8 +57,4 @@
   .navbar-font-size {
     font-size: 3rem;
   }
-
-  .navbar-background-color{
-    background-color: ghostwhite;
-  }
 </style>
