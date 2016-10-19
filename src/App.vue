@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <!-- route outlet -->
-    <top-branding class="header"></top-branding>
+    <top-branding class="header" ></top-branding>
     <router-view></router-view>
-    <navbar class="navbar"></navbar>
+      <navbar class="navbar" v-show="$route.path !== '/register'"></navbar>
+
   </div>
 </template>
 
