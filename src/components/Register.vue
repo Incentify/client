@@ -11,18 +11,6 @@
       Either your Email address is already taken or your passwords did not match.
   </div>
 
-  <div class="level is-mobile">
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
-    </a>
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
-    </a>
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
-    </a>
-  </div>
-
   <label for="">email</label>
   <input type="email" class="input" v-model="login.email">
 
