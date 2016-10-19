@@ -6,32 +6,35 @@
       Success! Redirecting to the app...
   </div>
 
+<!-- failure toast -->
   <div class="notification is-danger animated fadeIn" v-show="failure">
     <button class="delete" @click="failure = !failure"></button>
       Either your Email address is already taken or your passwords did not match.
   </div>
 
   <div class="level is-mobile">
-    <a class="button btn-padding level-item is-medium">
+    <!-- <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
+    </a> -->
+    <a class="button btn-padding level-item is-medium squaredCorners">
+      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Enter Your Email</span>
     </a>
-    <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Email</span>
-    </a>
-    <a class="button btn-padding level-item is-medium">
+    <!-- <a class="button btn-padding level-item is-medium">
       <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
-    </a>
+    </a> -->
   </div>
 
-  <label for="">email</label>
-  <input type="email" class="input" v-model="login.email">
+  <div class="formMargin">
+    <label for="" class="labelMargin"><strong>email</strong></label>
+    <input type="email" class="input inputMargin" v-model="login.email">
 
-  <label for="">enter a password</label>
-  <input type="password" class="input" v-model="login.password">
+    <label for="" class="labelMargin"><strong>enter a password</strong></label>
+    <input type="password" class="input inputMargin" v-model="login.password">
 
-  <label for="">confirm password</label>
-  <input type="password" class="input" v-model="login.confirmPassword">
-  <button class="button" @click="registerUser()">Register</button>
+    <label for="" class="labelMargin"><strong>confirm password</strong></label>
+    <input type="password" class="input inputMargin" v-model="login.confirmPassword">
+    <button class="button is-medium" @click="registerUser()">Register</button>
+  </div>
 </div>
 </template>
 
@@ -73,8 +76,24 @@ export default {
 </script>
 
 <style scoped>
-  label{
-    padding-left: 25px;
+  .squaredCorners{
+    border-radius: 0px;
+  }
+
+  .labelMargin{
+    margin-left: .5rem;
+  }
+
+  .inputMargin{
+    margin-bottom: .5rem;
+  }
+
+  .formMargin{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .wrapper {
