@@ -29,9 +29,6 @@ router.map({
   '/': {
     component: Register,
   },
-  '/register': {
-    name: 'register', component: Register,
-  },
   '/profile': {
     component: Profile,
   },
