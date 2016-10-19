@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
+import FastClick from 'fastclick';
 // routes
 import Register from './components/Register.vue';
 import Profile from './components/Profile.vue';
@@ -11,6 +12,9 @@ import Goal from './components/Goal.vue';
 // instantiate vue-router
 Vue.use(VueRouter);
 const router = new VueRouter();
+
+// get rid of 300ms tap delay
+FastClick.attach(document.body);
 
 router.map({
   '/': {
