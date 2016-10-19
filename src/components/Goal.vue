@@ -5,19 +5,19 @@
     <div class="has-text-right page-title">New Goal</div>
   </div>
 
-  <div class="card is-fullwidth">
+  <div class="card is-fullwidth integrationPanel" v-for="integration in integrations">
     <div class="card-content">
       <div class="content">
-        <div v-on:click="showIntegration = !showIntegration" v-show="showIntegration">
-          <strong><span>{{data.short_name}} data.short_name<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
+        <div v-on:click="integration.showIntegration = !integration.showIntegration" v-show="!integration.showIntegration">
+          <strong><span>{{integration.name}}<i class="fa fa-plus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
         </div>
 
-        <div v-on:click="showIntegration = !showIntegration" v-show="!showIntegration">
-          <strong><span>{{Treehouse}} data.short_name<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
+        <div v-on:click="integration.showIntegration = !integration.showIntegration" v-show="integration.showIntegration">
+          <strong><span>{{integration.name}}<i class="fa fa-minus is-pulled-right set-icon-size" aria-hidden="true"></i></span></strong>
         </div>
 
-        <div v-show="!showIntegration" class="animated fadeIn">
-          <p>{{data.description}} data.description</p>
+        <div v-show="integration.showIntegration" class="animated fadeIn">
+          <p>{{integration.description}}</p>
           <add-goal></add-goal>
         </div>
       </div>
@@ -29,11 +29,14 @@
 <script>
 import addGoal from './add-goal.vue';
 
+import _ from 'lodash';
+
 export default {
 
   data() {
     return {
       showIntegration: true,
+      integrations: "",
     };
   },
   methods: {
@@ -44,7 +47,20 @@ export default {
   components: {
     addGoal,
   },
+  ready() {
+    this.$http.get('http://localhost:3000/integrations').then((response) => {
+        // success callback
+        console.log(response)
+        this.integrations = response.body.map(function(i) {
+          return _.extend(i, { showIntegration: false })
+        })
+      }, (response) => {
+        // error callback
+        this.failure = !this.failure;
+      });
+  }
 };
+
 </script>
 
 <style lang="css" scoped>
@@ -60,5 +76,9 @@ export default {
 
     .submitButton {
       margin-left: 5%;
+    }
+
+    .integrationPanel{
+      margin-bottom: .5rem;
     }
 </style>

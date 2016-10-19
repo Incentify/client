@@ -1,7 +1,9 @@
 <template>
   <div>
+   <div class="colorBlock">ENTER USERNAME</div>
+    <input v-model="" class="input " placeholder=" Input your {{tempData.name}} username">
     <div class="colorBlock">CHOOSE A GOAL</div>
-    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points">
+    <input v-model="" class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points">
     <div class="colorBlock">CHOOSE INCENTIVE</div>
 
     <p class="control has-addons flexy incentiveOptions">
