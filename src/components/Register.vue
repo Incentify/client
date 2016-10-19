@@ -1,6 +1,6 @@
 <template>
-<div>
-  <img class="logo" src="../assets/incentify-logo-square_360.png">
+<div  class="register-bg">
+  <img src="../assets/incentify.logo.png" class="logo">
   <div class="notification is-success animated fadeIn" v-show="success">
     <button class="delete" @click="success = !success"></button>
       Success! Redirecting to the app...
@@ -25,15 +25,15 @@
   </div>
 
   <div class="formMargin">
-    <label for="" class="labelMargin"><strong>email</strong></label>
+    <label for="" class="labelMargin"><strong>Email</strong></label>
     <input type="email" class="input inputMargin" v-model="login.email">
 
-    <label for="" class="labelMargin"><strong>enter a password</strong></label>
+    <label for="" class="labelMargin"><strong>Enter a password</strong></label>
     <input type="password" class="input inputMargin" v-model="login.password">
 
-    <label for="" class="labelMargin"><strong>confirm password</strong></label>
+    <label for="" class="labelMargin"><strong>Confirm password</strong></label>
     <input type="password" class="input inputMargin" v-model="login.confirmPassword">
-    <button class="button is-medium" @click="registerUser()">Register</button>
+    <button class="button is-medium reg-btn" @click="registerUser()">Register</button>
   </div>
 </div>
 </template>
@@ -65,10 +65,18 @@ export default {
         //2 second timer before redirect
         setTimeout(() => {
           that.$router.go('/goal');
-        }, 1200);
+        }, 1600);
       }, (response) => {
         // error callback
         this.failure = !this.failure;
+       //binding this to use inside of setTimeout
+        const that = this;
+
+        //2 second timer before redirect
+        setTimeout(() => {
+           this.failure = !this.failure;
+        }, 1800);
+
       });
     },
   },
@@ -76,6 +84,11 @@ export default {
 </script>
 
 <style scoped>
+  .reg-btn {
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+
   .squaredCorners{
     border-radius: 0px;
   }
@@ -100,15 +113,19 @@ export default {
     width: 100%;
   }
 
+
   .logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
-    margin-bottom: 10%;
+    padding-top: 25%;
+    margin-bottom: 25%;
     border:none;
-    border-radius: 100%;
-    width:  50%;
-  }
+    width:  80%;
 
+  }
+  .register-bg {
+    background: #61cbec;
+    height: 100vh;
+  }
 </style>
