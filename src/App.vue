@@ -2,7 +2,7 @@
   <div id="app" v-bind:class="{ 'no-margin': $route.path === '/' }">
     <!-- route outlet -->
     <top-branding class="header" v-show="$route.path !== '/'" ></top-branding>
-    <router-view></router-view>
+      <router-view></router-view>
       <navbar class="navbar" v-show="$route.path !== '/'"></navbar>
   </div>
 </template>

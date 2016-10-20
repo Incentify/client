@@ -35,7 +35,7 @@
       </a>
     </p>
   </div>
-  <button class="button is-info is-fullwidth">Commit</button>
+  <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
 </template>
 
 <script>
@@ -58,8 +58,14 @@
       };
     },
     methods: {
-      test(elem) {
-        console.log(elem);
+      commit() {
+        this.$http.post('http://localhost:3000/users', this.goal).then((response) => {
+          // success callback
+          this.success = !this.success;
+        }, (response) => {
+          // error callback
+          this.failure = !this.failure;
+        });
       }
     }
   };
