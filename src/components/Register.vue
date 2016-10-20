@@ -125,7 +125,17 @@ export default {
 
   }
   .register-bg {
-    background: #61cbec;
+    /* background: #61cbec; */
     height: 100vh;
+
+    background: linear-gradient(181deg, #a1d7f3, #038ad2);
+    background-size: 400% 400%;
+    animation: gradientThing 7s ease infinite;
+  }
+
+  @keyframes gradientThing {
+    0%{background-position:48% 0%}
+    50%{background-position:53% 100%}
+    100%{background-position:48% 0%}
   }
 </style>

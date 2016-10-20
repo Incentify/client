@@ -50,7 +50,6 @@ export default {
   ready() {
     this.$http.get('http://localhost:3000/integrations').then((response) => {
         // success callback
-        console.log(response)
         this.integrations = response.body.map(function(i) {
           return _.extend(i, { showIntegration: false })
         })
