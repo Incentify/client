@@ -30,16 +30,23 @@
       <input class="input" type="password" placeholder="Password"  v-model="login.password">
       <i class="fa fa-lock"></i>
     </p>
-    <p class="control has-icon fm-bottom">
-      <input class="input" type="password" placeholder="Confirm Password" v-model="login.confirmPassword">
+    <p class="control has-icon fm-bottom" v-show="!userSwap">
+      <input class="input" type="password" placeholder="Confirm Password" v-model="login.confirmPassword" >
       <i class="fa fa-lock"></i>
     </p>
     <p class="control">
-      <button class="button is-primary is-fullwidth" @click="registerUser()">
+      <button class="button is-primary is-fullwidth" @click="registerUser()"  v-show="userSwap">
         Login
       </button>
     </p>
-    <p class="forgot-pass">Forgot Password?</p>
+    <p class="control">
+      <button class="button is-primary is-fullwidth" @click="registerUser()" v-show="!userSwap">
+        Sign Up!
+      </button>
+    </p>
+
+    <button class="userType" @click="userSwap = !userSwap" v-show="userSwap">New user? Sign up here!</button>
+    <button class="userType" @click="userSwap = !userSwap" v-show="!userSwap">Already a User? Login!</button>
   </div>
   <footer>By registering I accept the <br><b>Terms Of Service</b> and <b>Privacy Policy.</b></footer>
 </template>
@@ -55,6 +62,7 @@ export default {
       },
       success: false,
       failure: false,
+      userSwap: true,
     };
   },
   methods: {
@@ -98,9 +106,10 @@ export default {
     font-size: 18px;
     font-family: 'Shrikhand', cursive;
   }
-  .forgot-pass {
+  .userType {
     text-align: center;
     color: #fff;
+    font-size: 15px;
   }
   .reg-btn {
     margin-top: 1rem;
@@ -151,10 +160,10 @@ export default {
       animation-iteration-count: 1;
       opacity: 1.0;
      /*Lighter Mountain commented below*/
-      background-image: url('../assets/mountain.png');
-      background-position: 50% 0%;
+      /*background-image: url('../assets/mountain.png');
+      background-position: 50% 0%;*/
      /*Darker Mountain below*/
-/*     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../assets/mountain.png');*/
+     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../assets/mountain.png'); background-position: 50% 0%;
     }
 
     @keyframes gradientThing { 
@@ -183,7 +192,8 @@ export default {
   footer {
     color: #fff;
     text-align: center;
-    margin-top: 3.8rem;
+    margin-top: 8rem;
+
   }
 
 </style>
