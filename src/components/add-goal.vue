@@ -1,15 +1,16 @@
 <template>
   <div>
     <div class="colorBlock">Type Your {{tempData.name}} Username</div>
-    <input class="input " type="text">
+    <input class="input " type="text" v-model="goal.username">
 
     <div class="colorBlock">Choose A Goal</div>
-    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points">
-    <div class="colorBlock">Choose Incentive</div>
+    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
 
+    <div class="colorBlock">Choose Incentive</div>
     <p class="control has-addons flexy incentiveOptions">
       <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 1}">
         <span @click="activeTab.tab = 1">$5</span>
+        <!-- <span @click="test(this)" name="boot">$5</span> -->
       </a>
 
       <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 2}">
@@ -28,7 +29,7 @@
 
   <div class="animated fadeIn" v-show="!showIntegration$Input">
     <p class="control has-addons has-addons-centered">
-      <input class="input" type="text" placeholder="Up to $1000" value="{{incentiveAmount}}">
+      <input class="input" type="text" placeholder="Up to $1000" value="{{incentiveAmount}}" v-model="goal.amount">
       <a class="button is-active">
         <strong>Amount</strong>
       </a>
@@ -49,8 +50,18 @@
           min: 500,
           name: 'Treehouse',
         },
+        goal: {
+          username: '',
+          pointGoal: '',
+          amount: 500,
+        }
       };
     },
+    methods: {
+      test(elem) {
+        console.log(elem);
+      }
+    }
   };
 </script>
 
