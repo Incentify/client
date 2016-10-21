@@ -59,7 +59,7 @@
     .is-success {
     background-color: #00856d;
   }
-  
+    
     .is-primary {
     background-color: #61cbec;
   }

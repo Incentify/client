@@ -1,7 +1,11 @@
 <template>
+<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
 <div  class="register-bg">
   <img src="../assets/incentify.logo.png" class="logo">
-  <div class="notification is-success animated fadeIn" v-show="success">
+  <div class="slogan-container">
+    <h1 class="slogan"><b>Together we can reach your goals</b></h1>
+  </div>
+  <div class="notification is-success animated fadeIn " v-show="success">
     <button class="delete" @click="success = !success"></button>
       Success! Redirecting to the app...
   </div>
@@ -13,29 +17,31 @@
   </div>
 
   <div class="level is-mobile">
-    <!-- <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-facebook"></i></span> <span>Facebook</span>
-    </a> -->
-    <a class="button btn-padding level-item is-medium squaredCorners">
-      <span class="icon"><i class="fa fa-envelope"></i></span> <span>Enter Your Email</span>
-    </a>
-    <!-- <a class="button btn-padding level-item is-medium">
-      <span class="icon"><i class="fa fa-twitter"></i></span> <span>Twitter</span>
-    </a> -->
+
   </div>
 
-  <div class="formMargin">
-    <label for="" class="labelMargin"><strong>Email</strong></label>
-    <input type="email" class="input inputMargin" v-model="login.email">
-
-    <label for="" class="labelMargin"><strong>Enter a password</strong></label>
-    <input type="password" class="input inputMargin" v-model="login.password">
-
-    <label for="" class="labelMargin"><strong>Confirm password</strong></label>
-    <input type="password" class="input inputMargin" v-model="login.confirmPassword">
-    <button class="button is-medium reg-btn" @click="registerUser()">Register</button>
+    <div class = "formMargin">
+    <h1 class="sign-up">-SIGN UP-</h1>
+    <p class="control has-icon fm-bottom">
+      <input class="input" type="email" placeholder="Email" v-model="login.email">
+      <i class="fa fa-envelope"></i>
+    </p>
+    <p class="control has-icon fm-bottom">
+      <input class="input" type="password" placeholder="Password"  v-model="login.password">
+      <i class="fa fa-lock"></i>
+    </p>
+    <p class="control has-icon fm-bottom">
+      <input class="input" type="password" placeholder="Confirm Password" v-model="login.confirmPassword">
+      <i class="fa fa-lock"></i>
+    </p>
+    <p class="control">
+      <button class="button is-primary is-fullwidth" @click="registerUser()">
+        Login
+      </button>
+    </p>
+    <p class="forgot-pass">Forgot Password?</p>
   </div>
-</div>
+  <footer>By registering I accept the <br><b>Terms Of Service</b> and <b>Privacy Policy.</b></footer>
 </template>
 
 <script>
@@ -65,7 +71,7 @@ export default {
         //2 second timer before redirect
         setTimeout(() => {
           that.$router.go('/goal');
-        }, 1600);
+        }, 2200);
       }, (response) => {
         // error callback
         this.failure = !this.failure;
@@ -84,6 +90,18 @@ export default {
 </script>
 
 <style scoped>
+
+  .sign-up {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Shrikhand', cursive;
+  }
+  .forgot-pass {
+    text-align: center;
+    color: #fff;
+  }
   .reg-btn {
     margin-top: 1rem;
     border-radius: 1rem;
@@ -118,14 +136,54 @@ export default {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25%;
-    margin-bottom: 25%;
+    padding-top: 15%;
+    margin-bottom:;
     border:none;
-    width:  80%;
+    width:  85%;
+    
 
   }
   .register-bg {
-    background: #61cbec;
-    height: 100vh;
+      /* background: #61cbec; */
+      height: 100vh;
+      background-size: 200% 200%;
+      animation: gradientThing 10s linear infinite;
+      animation-iteration-count: 1;
+      opacity: 1.0;
+     /*Lighter Mountain commented below*/
+      background-image: url('../assets/mountain.png');
+      background-position: 50% 0%;
+     /*Darker Mountain below*/
+/*     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../assets/mountain.png');*/
+    }
+
+    @keyframes gradientThing { 
+      0%{background-position:50% 100%}
+     /* 50%{background-position:50% 50%}*/
+      100%{background-position:50% 0%}
+    }
+
+  .fm-bottom {
+    margin-bottom: 1.5rem;
   }
+
+  .slogan {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 50px;
+    background-color: rgba(0,0,0,0.2);
+    display:inline-block;
+    padding: 6px;
+
+  }
+  .slogan-container {
+    text-align: center;
+  }
+  footer {
+    color: #fff;
+    text-align: center;
+    margin-top: 3.8rem;
+  }
+
 </style>
