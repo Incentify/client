@@ -35,18 +35,18 @@
       <i class="fa fa-lock"></i>
     </p>
     <p class="control">
-      <button class="button is-primary is-fullwidth" @click="registerUser()"  v-show="userSwap">
+      <button class="button is-primary is-fullwidth" v-show="userSwap"  @click="loginUser()">
         Login
       </button>
     </p>
     <p class="control">
-      <button class="button is-primary is-fullwidth" @click="registerUser()" v-show="!userSwap">
+      <button class="button is-primary is-fullwidth" v-show="!userSwap" @click="registerUser()" >
         Sign Up!
       </button>
     </p>
 
-    <button class="userType" @click="userSwap = !userSwap" v-show="userSwap">New user? Sign up here!</button>
-    <button class="userType" @click="userSwap = !userSwap" v-show="!userSwap">Already a User? Login!</button>
+    <a class="userType" @click="userSwap = !userSwap" v-show="userSwap">New user? Sign up here!</a>
+    <a class="userType" @click="userSwap = !userSwap" v-show="!userSwap">Already a User? Login!</a>
   </div>
   <footer>By registering I accept the <br><b>Terms Of Service</b> and <b>Privacy Policy.</b></footer>
 </template>
@@ -66,6 +66,7 @@ export default {
     };
   },
   methods: {
+
     registerUser() {
       this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
         // server sends back JWT, we put it in localStorage
@@ -93,8 +94,35 @@ export default {
 
       });
     },
-  },
-};
+    loginUser() {
+        this.$http.post('http://localhost:3000/auth/login', this.login).then((response) => {
+          // server sends back JWT, we put it in localStorage
+          localStorage.setItem('token', response.body.token)
+
+          // success callback
+          this.success = !this.success;
+          //binding this to use inside of setTimeout
+          const that = this;
+
+          //2 second timer before redirect
+          setTimeout(() => {
+            that.$router.go('/goal');
+          }, 2200);
+        }, (response) => {
+          // error callback
+          this.failure = !this.failure;
+         //binding this to use inside of setTimeout
+          const that = this;
+
+          //2 second timer before redirect
+          setTimeout(() => {
+             this.failure = !this.failure;
+          }, 1800);
+
+        });
+      },
+    },
+  };
 </script>
 
 <style scoped>
@@ -163,7 +191,7 @@ export default {
       /*background-image: url('../assets/mountain.png');
       background-position: 50% 0%;*/
      /*Darker Mountain below*/
-     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../assets/mountain.png'); background-position: 50% 0%;
+     background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../assets/mountain.png); background-position: 50% 0%;
     }
 
     @keyframes gradientThing { 
