@@ -44,6 +44,13 @@ router.map({
 });
 
 router.start(App, 'body');
+document.addEventListener("DOMContentLoaded", function(event) {
+  setTimeout(function() {
+     navigator.splashscreen.hide();
+   }, 3000)
+
+})
+
 
 /* eslint-disable no-new */
 new Vue({
