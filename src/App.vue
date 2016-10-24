@@ -42,12 +42,15 @@
 
   .header{
     margin-bottom: 4rem;
+    z-index: 10;
   }
 
   .navbar {
     position: fixed;
     bottom: 0px;
     width: 100%;
+    z-index: 10;
+    background-color:  ghostwhite;
   }
 
   /* this makes the sticky headers/footers without covering up the content */
@@ -55,11 +58,11 @@
     margin-top: 5rem;
     margin-bottom: 3.5rem;
   }
- 
+
     .is-success {
     background-color: #00856d;
   }
-  
+
     .is-primary {
     background-color: #61cbec;
   }

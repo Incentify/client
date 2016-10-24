@@ -7,34 +7,16 @@
     <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
 
     <div class="colorBlock">Choose Incentive</div>
-    <p class="control has-addons flexy incentiveOptions">
-      <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 1}">
-        <span @click="activeTab.tab = 1">$5</span>
-        <!-- <span @click="test(this)" name="boot">$5</span> -->
-      </a>
-
-      <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 2}">
-        <span @click="activeTab.tab = 2">$25</span>
-      </a>
-
-      <a class="button" v-bind:class="{ 'is-active': activeTab.tab === 3}">
-        <span @click="activeTab.tab = 3">$50</span>
-      </a>
-
-      <a class="button" @click="showIntegration$Input = !showIntegration$Input" v-bind:class="{ 'is-active': activeTab.tab === 4}">
-        <span @click="activeTab.tab = 4">other</span>
-      </a>
-    </p>
-  </div>
-
-  <div class="animated fadeIn" v-show="!showIntegration$Input">
+    <div class="animated fadeIn">
     <p class="control has-addons has-addons-centered">
-      <input class="input" type="text" placeholder="Up to $1000" value="{{incentiveAmount}}" v-model="goal.amount">
+      <input class="input" type="text" placeholder="$5 to $1000" v-model="goal.amount">
       <a class="button is-active">
         <strong>Amount</strong>
       </a>
     </p>
   </div>
+  </div>
+
   <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
 </template>
 
@@ -59,7 +41,7 @@
     },
     methods: {
       commit() {
-        this.$http.post('http://localhost:3000/users', this.goal).then((response) => {
+        this.$http.put('http://localhost:3000/commitments', this.goal).then((response) => {
           // success callback
           this.success = !this.success;
         }, (response) => {
