@@ -202,39 +202,23 @@ export default {
     
 
   }
- /* .register-bg {*/
-      /* background: #61cbec; */
-    /*  height: 100vh;
+     .register-bg {
+      background: #61cbec; 
+      height: 100vh;
       background-size: 200% 200%;
       animation: gradientThing 10s linear infinite;
       animation-iteration-count: 1;
-      opacity: 1.0;*/
+      opacity: 1.0;
      /*Lighter Mountain commented below*/
-      /*background-image: url('../assets/mountain.png');
-      background-position: 50% 0%;*/
-     /*Darker Mountain below*/
-     /*background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../assets/mountain.png); background-position: 50% 0%;
-    }*/
+      background-image: url('../assets/mountain.png');
+      background-position: 50% 0%;
+    }
 
- /*   @keyframes gradientThing { 
-      0%{background-position:50% 100%}*/
-     /* 50%{background-position:50% 50%}*/
-   /*   100%{background-position:50% 0%}
-    }*/
-    .register-bg {
-    /* background: #61cbec; */
-    height: 100vh;
-
-    background: linear-gradient(181deg, #1ec0ff, #0080ff,#a3daff);
-    background-size: 400% 400%;
-    animation: gradientThing 7s ease infinite;
-  }
-
-  @keyframes gradientThing {
-    0%{background-position:48% 0%}
-    50%{background-position:53% 100%}
-    100%{background-position:48% 0%}
-  }
+    @keyframes gradientThing { 
+      0%{background-position:50% 100%}
+      50%{background-position:50% 50%}
+      100%{background-position:50% 0%}
+    }
 
   .fm-bottom {
     margin-bottom: 1.5rem;
