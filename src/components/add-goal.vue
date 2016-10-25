@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="colorBlock">Type Your {{tempData.name}} Username</div>
+  <div>data-binding: {{integrationName}}</div>
+    <div class="colorBlock">Type Your {{integrationData.name}} Username</div>
     <input class="input " type="text" v-model="goal.username">
 
     <div class="colorBlock">Choose A Goal</div>
-    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{tempData.name}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
+    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{integration.name}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
 
     <div class="colorBlock">Choose Incentive</div>
     <div class="animated fadeIn">
@@ -15,13 +16,16 @@
       </a>
     </p>
   </div>
+  <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
   </div>
 
-  <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
 </template>
 
 <script>
   export default {
+    props: [
+      'integration-name',
+    ],
     data() {
       return {
         showIntegration$Input: true,
@@ -41,7 +45,7 @@
     },
     methods: {
       commit() {
-        this.$http.put('http://localhost:3000/commitments', this.goal).then((response) => {
+        this.$http.put('http://localhost:3000/commitments' + integration.name, this.goal).then((response) => {
           // success callback
           this.success = !this.success;
         }, (response) => {

@@ -18,7 +18,7 @@
 
         <div v-show="integration.showIntegration" class="animated fadeIn">
           <p>{{integration.description}}</p>
-          <add-goal></add-goal>
+          <add-goal :integration-name="{{integration.name}}"></add-goal>
         </div>
       </div>
     </div>
