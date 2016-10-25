@@ -37,18 +37,17 @@ export default {
     };
   },
   ready() {
-        this.$http.get('http://localhost:3000/users').then((response) => {
-            console.log(response)
-            // success callback
-            this.dashboardData = response.body.map(function(i) {
-              return _.extend(i, { showUserInfo: false })
-            })
-          }, (response) => {
-            // error callback
-            this.failure = !this.failure;
-          });
-      }
-
+    this.$http.get('http://localhost:3000/users').then((response) => {
+      console.log(response)
+      // success callback
+      this.dashboardData = response.body.map(function(i) {
+        return _.extend(i, { showUserInfo: false })
+      })
+    }, (response) => {
+      // error callback
+      this.failure = !this.failure;
+    });
+  }
 };
 
 </script>
