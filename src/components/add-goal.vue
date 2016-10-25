@@ -44,7 +44,8 @@
     methods: {
       commit() {
         var shortname = this.integrationShortName.toLowerCase();
-        this.$http.put('http://localhost:3000/commitments/' + shortname, this.goal).then((response) => {
+        this.$http.post(process.env.API_URL + '/commitments' + shortname, this.goal)
+        .then((response) => {
           // success callback
           this.success = !this.success;
         }, (response) => {

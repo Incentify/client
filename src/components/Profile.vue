@@ -42,7 +42,6 @@
 
 <script>
 
-
 export default {
   data() {
     return {
@@ -65,7 +64,7 @@ export default {
     },
     submitProfile() {
       // vue-resource POST of new user data
-      this.$http.put('http://localhost:3000/users', this.profile).then((response) => {
+      this.$http.put(process.env.API_URL + '/users', this.profile).then((response) => {
         // success callback
         this.formDisabled = !this.formDisabled;
         this.success = !this.success;
@@ -76,7 +75,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('http://localhost:3000/users').then((response) => {
+    this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
       console.log(response);
       this.profileData.email = response.body[0].email;

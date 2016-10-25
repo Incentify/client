@@ -49,7 +49,7 @@ export default {
     addGoal,
   },
   ready() {
-    this.$http.get('http://localhost:3000/integrations').then((response) => {
+    this.$http.get(process.env.API_URL + '/integrations').then((response) => {
       // success callback
       this.integrations = response.body.map(function(i) {
         return _.extend(i, { showIntegration: false })

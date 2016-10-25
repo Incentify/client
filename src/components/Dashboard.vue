@@ -37,7 +37,7 @@ export default {
     };
   },
   ready() {
-    this.$http.get('http://localhost:3000/users').then((response) => {
+    this.$http.get(process.env.API_URL + '/users').then((response) => {
       console.log(response)
       // success callback
       this.dashboardData = response.body.map(function(i) {
