@@ -18,7 +18,7 @@
 
         <div v-show="integration.showIntegration" class="animated fadeIn">
           <p>{{integration.description}}</p>
-          <add-goal></add-goal>
+          <add-goal :integration-name="integration.name" :integration-short-name="integration.short_name"></add-goal>
         </div>
       </div>
     </div>
@@ -28,7 +28,6 @@
 
 <script>
 import addGoal from './add-goal.vue';
-
 import _ from 'lodash';
 
 export default {
@@ -36,7 +35,9 @@ export default {
   data() {
     return {
       showIntegration: true,
-      integrations: "",
+      integrations: {
+        name: "",
+      },
     };
   },
   methods: {
@@ -48,7 +49,7 @@ export default {
     addGoal,
   },
   ready() {
-    this.$http.get('http://localhost:3000/integrations').then((response) => {
+    this.$http.get(process.env.API_URL + '/integrations').then((response) => {
       // success callback
       this.integrations = response.body.map(function(i) {
         return _.extend(i, { showIntegration: false })
@@ -63,21 +64,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
-    .page-title {
+  .page-title {
     font-size: 1.8rem;
     color: #587272;
     margin-right: 2%;
     padding-bottom: 2%;
   }
-   .goal-vertical-spacing {
-      margin-top: .75rem;
-    }
 
-    .submitButton {
-      margin-left: 5%;
-    }
+  .goal-vertical-spacing {
+    margin-top: .75rem;
+  }
 
-    .integrationPanel{
-      margin-bottom: .5rem;
-    }
+  .submitButton {
+    margin-left: 5%;
+  }
+
+  .integrationPanel{
+    margin-bottom: .5rem;
+  }
 </style>
