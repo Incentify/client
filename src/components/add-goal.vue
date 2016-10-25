@@ -1,30 +1,29 @@
 <template>
   <div>
-  <div>data-binding: {{integrationName}}</div>
-    <div class="colorBlock">Type Your {{integrationData.name}} Username</div>
+    <div class="colorBlock">Type Your {{integrationName}} Username:</div>
     <input class="input " type="text" v-model="goal.username">
 
     <div class="colorBlock">Choose A Goal</div>
-    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{integration.name}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
+    <input class="input " type="number" min="{{tempData.min}}" placeholder="{{integrationName}} requires at least {{tempData.min}} points" v-model="goal.pointGoal">
 
     <div class="colorBlock">Choose Incentive</div>
     <div class="animated fadeIn">
-    <p class="control has-addons has-addons-centered">
-      <input class="input" type="text" placeholder="$5 to $1000" v-model="goal.amount">
-      <a class="button is-active">
-        <strong>Amount</strong>
-      </a>
-    </p>
+      <p class="control has-addons has-addons-centered">
+        <input class="input" type="number" max="1000" placeholder="$5 to $1000" v-model="goal.amount">
+        <a class="button is-active">
+          <strong>Amount</strong>
+        </a>
+      </p>
+    </div>
+    <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
   </div>
-  <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
-  </div>
-
 </template>
 
 <script>
   export default {
     props: [
       'integration-name',
+      'integration-short-name',
     ],
     data() {
       return {
@@ -39,13 +38,13 @@
         goal: {
           username: '',
           pointGoal: '',
-          amount: 500,
         }
       };
     },
     methods: {
       commit() {
-        this.$http.put('http://localhost:3000/commitments' + integration.name, this.goal).then((response) => {
+        var shortname = this.integrationShortName.toLowerCase();
+        this.$http.put('http://localhost:3000/commitments/' + shortname, this.goal).then((response) => {
           // success callback
           this.success = !this.success;
         }, (response) => {
