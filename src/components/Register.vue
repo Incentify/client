@@ -88,7 +88,7 @@ export default {
   methods: {
 
     registerUser() {
-      this.$http.post('http://localhost:3000/auth/register', this.login).then((response) => {
+      this.$http.post('http://localhost:3000/auth/register', this.register).then((response) => {
         // server sends back JWT, we put it in localStorage
         localStorage.setItem('token', response.body.token)
 
