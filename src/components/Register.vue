@@ -21,7 +21,7 @@
     </div>
    <!--  Login to an account form -->
     <div class = "formMargin" v-show="showRegister">
-      <h1 class="sign-up">-SIGN UP-</h1>
+      <h1 class="sign-up">-LOGIN-</h1>
       <p class="control has-icon fm-bottom">
         <input class="input" type="email" placeholder="Email" v-model="login.email">
         <i class="fa fa-envelope"></i>
