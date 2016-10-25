@@ -73,6 +73,11 @@ export default {
         this.failure = !this.failure;
       });
     },
+      logout() {
+        console.log("hi")
+        localStorage.removeItem('token')
+        this.$router.go('/');
+     }
   },
   created() {
     this.$http.get(process.env.API_URL + '/users').then((response) => {
@@ -83,7 +88,7 @@ export default {
       // error callback
       this.failure = !this.failure;
     });
-  }
+  },
 };
 </script>
 
