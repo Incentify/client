@@ -5,22 +5,12 @@
         <div class="has-text-right page-title">Dashboard</div>
     </div>
 
-    <div class="card is-fullwidth goal-vertical-spacing">
+    <div class="card is-fullwidth goal-vertical-spacing"v-for="x in dashboardData">
         <div class="card-content">
             <div class="content">
-                <h1><strong>Treehouse</strong> Reggiesibley <img src="../assets/treehouse-logo.png" class="is-pulled-right goal-provider-icon"></h1>
-                <progress class="progress is-small is-success" value="45" max="100">45%</progress>
-                <h3>45% of {{55}} Points</h3> Time Remaining: 1 day, 23 hours, 21 minutes
-            </div>
-        </div>
-    </div>
-
-    <div class="card is-fullwidth goal-vertical-spacing">
-        <div class="card-content">
-            <div class="content">
-                <h1><strong>DuoLingo</strong> Reggiesibley <img src="../assets/duolingo-logo.png" class="is-pulled-right goal-provider-icon"></h1>
-                <progress class="progress is-small is-success" value="5" max="100">5%</progress>
-                <h3>5% of {{55}} Points</h3> Time Remaining: 2 days, 3 hours, 10 minutes
+                <h1><strong>Treehouse </strong>{{x.username}}<img src="../assets/treehouse-logo.png" class="is-pulled-right goal-provider-icon"></h1>
+                <progress class="progress is-small is-success" value="{{x.progress}}" max="100">45%</progress>
+                <h3>{{x.progress}} of {{x.goal_amount}} Points</h3> Time Remaining: 1 day, 23 hours, 21 minutes
             </div>
         </div>
     </div>
@@ -33,15 +23,31 @@ export default {
   data() {
     return {
         dashboardData: "",
-
+        starting_points: 0,
+        goal_points: 0,
+        current_points: 0,
+        progress: 0,
     };
   },
   ready() {
+       this.$http.put(process.env.API_URL + '/users/update').then((response) => {
+          console.log(response)
+          // success callback
+        }, (response) => {
+          // error callback
+          this.failure = !this.failure;
+        });
+
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       console.log(response)
       // success callback
-      this.dashboardData = response.body.map(function(i) {
-        return _.extend(i, { showUserInfo: false })
+        this.starting_points = response.body[response.body.length -1].starting_points;
+        this.goal_points = response.body[response.body.length -1].goal_amount;
+        this.current_points = response.body[response.body.length -1].value;
+        this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
+        
+        this.dashboardData = response.body.map(function(i) {
+          return _.extend(i, { showUserInfo: false })
       })
     }, (response) => {
       // error callback
