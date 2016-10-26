@@ -47,13 +47,15 @@
       };
     },
     ready() {
+      var that = this;
       this.stripe_instance = StripeCheckout.configure({
         key: 'pk_test_t5EdiYNBA1LOp7En1xhBOYVp',    //put your own publishable key here
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
         token: function(token) {
-          this.stripe_token= token;
-          this.sendData2Server();
+          that.stripe_token= token;
+          // that.sendDataToServer();
+          that.sendDataToServer();
         }
       });
     },
@@ -77,7 +79,7 @@
         })
         // console.log('attempting to get a token');
       },
-      sendData2Server() {
+      sendDataToServer() {
         console.log("data 2 server");
         this.order_status= "PENDING";
         this.$http.post(process.env.API_URL + '/stripe/process_payment', {token_id: this.stripe_token.id, price: this.price})
