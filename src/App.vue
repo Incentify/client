@@ -13,6 +13,7 @@
   import Vue from 'vue';
   import auth from './auth/index.js';
 
+
   require('bulma/bulma.sass');
   require('animate.css/animate.css');
   require('!style!css!sass!font-awesome/scss/font-awesome.scss');
@@ -55,7 +56,7 @@
 
   /* this makes the sticky headers/footers without covering up the content */
   #app{
-    margin-top: 5rem;
+    margin-top: 9rem;
     margin-bottom: 3.5rem;
   }
 

@@ -1,6 +1,6 @@
 <template>
 	<nav class="box box-slim stickyHeader">
-      <a class="" href="#"><img class="logo-size" src="../assets/incentify-logo-rectangle.png"></a>
+      <a class="" href="#"><img class="logo-size" src="../assets/incentify.logo.png"></a>
   </nav>
 </template>
 
@@ -23,13 +23,16 @@ export default {
     top: 0;
     width:  100%;
     border-radius: 0px;
+    background-color: #61cbec; 
   }
 
   .logo-size{
-    width: 12rem;
+    margin:0 auto;
+
   }
 
   .box-slim{
     padding: 1%;
+    padding: 1rem;
   }
 </style>
