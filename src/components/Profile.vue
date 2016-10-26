@@ -74,7 +74,6 @@ export default {
       });
     },
       logout() {
-        console.log("hi")
         localStorage.removeItem('token')
         this.$router.go('/');
      }
