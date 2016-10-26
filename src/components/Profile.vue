@@ -74,7 +74,6 @@ export default {
       });
     },
       logout() {
-        console.log("hi")
         localStorage.removeItem('token')
         this.$router.go('/');
      }
@@ -82,7 +81,6 @@ export default {
   created() {
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
-      console.log(response);
       this.profileData.email = response.body[0].email;
     }, (response) => {
       // error callback

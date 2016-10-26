@@ -16,6 +16,7 @@
       </p>
     </div>
     <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
+    <button class="button" @click.prevent="purchaseStuff()">PURCHASE</button>
   </div>
 </template>
 
@@ -27,6 +28,10 @@
     ],
     data() {
       return {
+        stripe_token: {},
+        price: 1000,
+        stripe_instance: {},
+        order_status: 'READY',
         showIntegration$Input: true,
         activeTab: {
           tab: 1,
@@ -41,6 +46,17 @@
         }
       };
     },
+    ready() {
+      this.stripe_instance = StripeCheckout.configure({
+        key: 'pk_test_t5EdiYNBA1LOp7En1xhBOYVp',    //put your own publishable key here
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        token: function(token) {
+          this.stripe_token= token;
+          this.sendData2Server();
+        }
+      });
+    },
     methods: {
       commit() {
         var shortname = this.integrationShortName.toLowerCase();
@@ -52,7 +68,28 @@
           // error callback
           this.failure = !this.failure;
         });
-      }
+      },
+      purchaseStuff() {
+        this.stripe_instance.open({
+          name: 'Incentify',
+          description: 'New Commitment',
+          amount: this.price
+        })
+        // console.log('attempting to get a token');
+      },
+      sendData2Server() {
+        console.log("data 2 server");
+        this.order_status= "PENDING";
+        this.$http.post(process.env.API_URL + '/stripe/process_payment', {token_id: this.stripe_token.id, price: this.price})
+        .then((response) => {
+          // console.log(response.body);
+          this.order_status= "Successfully Completed";
+        },(response) => {
+          // error callback
+          // console.log(response.body);
+          this.order_status= "Failed";
+        });
+      },
     }
   };
 </script>
