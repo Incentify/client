@@ -26,7 +26,6 @@ const router = new VueRouter();
 
 // get rid of 300ms tap delay
 FastClick.attach(document.body);
-console.log(process.env.API_URL);
 
 router.map({
   '/': {
