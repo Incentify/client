@@ -81,7 +81,6 @@ export default {
   created() {
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
-      console.log(response);
       this.profileData.email = response.body[0].email;
     }, (response) => {
       // error callback

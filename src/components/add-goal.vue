@@ -52,8 +52,6 @@
         image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
         locale: 'auto',
         token: function(token) {
-          console.log(token);
-          // console.log('got a token. sending data to localhost');
           this.stripe_token= token;
           this.sendData2Server();
         }
@@ -91,7 +89,7 @@
           // console.log(response.body);
           this.order_status= "Failed";
         });
-      }
+      },
     }
   };
 </script>
