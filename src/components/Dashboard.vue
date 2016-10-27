@@ -43,9 +43,15 @@ export default {
       console.log(response)
       // success callback
         this.starting_points = response.body[response.body.length -1].starting_points;
+        console.log(this.starting_points);
+
         this.goal_points = response.body[response.body.length -1].goal_amount;
+        console.log(this.goal_points);
+
         this.current_points = response.body[response.body.length -1].value;
-        this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
+        console.log(this.current_points);
+
+        this.progress = parseFloat((this.current_points - this.starting_points));
         console.log(this.progress);
         
         this.dashboardData = response.body.map(function(i) {

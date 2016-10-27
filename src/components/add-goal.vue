@@ -69,18 +69,20 @@
             // error callback
             this.failure = !this.failure;
           });
-        // var that = this;
-        //   this.$swal({
-        //     title: 'Commit!',
-        //     text: "Are you sure you want to commit to this weekly goal?",
-        //     type: 'question',
-        //     showCancelButton: true,
-        //     confirmButtonColor: '#3085d6',
-        //     cancelButtonColor: '#d33',
-        //     confirmButtonText: 'Absolutely!'
-        //   }).then(function(){
-            
-        //   })
+        var that = this;
+          this.$swal({
+            title: 'Commit!',
+            text: "Are you sure you want to commit to this weekly goal?",
+            type: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Absolutely!'
+          }).then(function(){
+            this.goal.username = '';
+            this.goal.pointgoal = '';
+            this.goal.amount = 0;
+          })
       },
       purchaseStuff() {
         this.stripe_instance.open({
