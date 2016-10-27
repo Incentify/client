@@ -30,23 +30,21 @@ export default {
     };
   },
   ready() {
-       this.$http.put(process.env.API_URL + '/users/update').then((response) => {
-          console.log(response)
-          // success callback
-        }, (response) => {
-          // error callback
-          this.failure = !this.failure;
-        });
+   this.$http.put(process.env.API_URL + '/users/update').then((response) => {
+      // success callback
+    }, (response) => {
+      // error callback
+      this.failure = !this.failure;
+    });
 
     this.$http.get(process.env.API_URL + '/users').then((response) => {
-      console.log(response)
       // success callback
-        this.starting_points = response.body[response.body.length -1].starting_points;
-        this.goal_points = response.body[response.body.length -1].goal_amount;
-        this.current_points = response.body[response.body.length -1].value;
-        this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
-        
-        this.dashboardData = response.body.map(function(i) {
+      this.starting_points = response.body[response.body.length -1].starting_points;
+      this.goal_points = response.body[response.body.length -1].goal_amount;
+      this.current_points = response.body[response.body.length -1].value;
+      this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
+
+      this.dashboardData = response.body.map(function(i) {
           return _.extend(i, { showUserInfo: false })
       })
     }, (response) => {
