@@ -59,9 +59,6 @@ export default {
     };
   },
   methods: {
-    editProfile() {
-      this.formDisabled = !this.formDisabled;
-    },
     submitProfile() {
       // vue-resource POST of new user data
       this.$http.put(process.env.API_URL + '/users', this.profile).then((response) => {
@@ -74,9 +71,27 @@ export default {
       });
     },
       logout() {
-        localStorage.removeItem('token')
-        this.$router.go('/');
-     }
+        var that = this;
+        this.$swal({
+          title: 'Logout',
+          text: "Are you sure you want to logout?",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Logout'
+      }).then(function() {
+        // swal(
+        //   function() {
+          // 'Deleted!',
+          // 'Your file has been deleted.',
+          // 'success',
+          localStorage.removeItem('token')
+          that.$router.go('/');
+        // }
+        // )
+      })
+     },
   },
   created() {
     this.$http.get(process.env.API_URL + '/users').then((response) => {

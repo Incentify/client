@@ -3,6 +3,7 @@ import App from './App';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import FastClick from 'fastclick';
+import VueSweetAlert from 'vue-sweetalert';
 // import Interceptor from './auth/interceptor.js';
 
 // routes
@@ -12,6 +13,7 @@ import Settings from './components/Settings.vue';
 import Dashboard from './components/Dashboard.vue';
 import Goal from './components/Goal.vue';
 
+Vue.use(VueSweetAlert);
 // global HTTP header interception
 // Interceptor.init();
 

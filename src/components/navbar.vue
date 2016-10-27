@@ -6,21 +6,21 @@
       <!-- Dashboard -->
       <li v-bind:class="{ 'is-active': isActive.tab === 1}">
         <a v-link="{path:'dashboard'}" @click="isActive.tab = 1">
-          <span class="icon"><i class="fa fa-tachometer navbar-font-size" aria-hidden="true"></i></span>
+          <span class=""><i class="fa fa-tachometer navbar-font-size" aria-hidden="true"></i></span>
         </a>
       </li>
 
       <!-- Goal -->
       <li v-bind:class="{ 'is-active': isActive.tab === 2}">
         <a v-link="{path:'goal'}" @click="isActive.tab = 2">
-          <span class="icon"><i class="fa fa-plus navbar-font-size" aria-hidden="true"></i></span>
+          <span class=""><i class="fa fa-plus navbar-font-size" aria-hidden="true"></i></span>
         </a>
       </li>
 
       <!-- Profile -->
       <li v-bind:class="{ 'is-active': isActive.tab === 3}">
         <a v-link="{path:'profile'}" @click="isActive.tab = 3">
-          <span class="icon"><i class="fa fa-user navbar-font-size" aria-hidden="true"></i></span>
+          <span class=""><i class="fa fa-user navbar-font-size" aria-hidden="true"></i></span>
         </a>
       </li>
 
@@ -55,6 +55,11 @@
 <style scoped>
 
   .navbar-font-size {
-    font-size: 3rem;
+    font-size: 2rem;
   }
+
+  .tabs.is-toggle li.is-active a {
+    color: #fff !important;
+  }
+
 </style>
