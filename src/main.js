@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import FastClick from 'fastclick';
 import VueSweetAlert from 'vue-sweetalert';
+import vueMoment from 'vue-moment';
 // import Interceptor from './auth/interceptor.js';
 
 // routes
@@ -22,6 +23,8 @@ Vue.use(VueResource);
 
 // instantiate vue-router
 Vue.use(VueRouter);
+
+Vue.use(vueMoment);
 const router = new VueRouter();
 
 // get rid of 300ms tap delay

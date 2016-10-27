@@ -59,12 +59,19 @@ export default {
     };
   },
   methods: {
+    editProfile() {
+      this.formDisabled = !this.formDisabled;
+    },
     submitProfile() {
       // vue-resource POST of new user data
       this.$http.put(process.env.API_URL + '/users', this.profile).then((response) => {
         // success callback
         this.formDisabled = !this.formDisabled;
-        this.success = !this.success;
+        this.$swal(
+          'Success!',
+          'Your profile was successfully updated',
+          'success'
+        )
       }, (response) => {
         // error callback
         this.failure = !this.failure;
