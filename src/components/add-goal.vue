@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="colorBlock">Type Your {{integrationName}} Username:</div>
     <input class="input " type="text" v-model="goal.username">
 
@@ -15,8 +15,7 @@
         </a>
       </p>
     </div>
-    <button class="button is-info is-fullwidth" @click="commit()">Commit</button>
-    <button class="button" @click.prevent="purchaseStuff()">PURCHASE</button>
+    <button class="button is-info is-fullwidth commit" @click="commit()">Commit</button>
   </div>
 </template>
 
@@ -63,13 +62,25 @@
       commit() {
         var shortname = this.integrationShortName.toLowerCase();
         this.$http.post(process.env.API_URL + '/commitments/' + shortname, this.goal)
-        .then((response) => {
-          // success callback
-          this.success = !this.success;
-        }, (response) => {
-          // error callback
-          this.failure = !this.failure;
-        });
+          .then((response) => {
+            // success callback
+            this.purchaseStuff();
+          }, (response) => {
+            // error callback
+            this.failure = !this.failure;
+          });
+        // var that = this;
+        //   this.$swal({
+        //     title: 'Commit!',
+        //     text: "Are you sure you want to commit to this weekly goal?",
+        //     type: 'question',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Absolutely!'
+        //   }).then(function(){
+            
+        //   })
       },
       purchaseStuff() {
         this.stripe_instance.open({
@@ -112,10 +123,19 @@
   }
 
   .colorBlock{
-    background-color: #00d1b2;
+    background-color: #fbb13c;
     text-align: center;
     border-radius: 3px;
     margin-bottom: 3%;
     padding: 1%;
+    color: white;
+  }
+
+  .wrapper {
+    font-size: 1.2rem;
+  }
+
+  .commit {
+    background-color: #2176ae;
   }
 </style>

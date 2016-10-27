@@ -9,8 +9,9 @@
         <div class="card-content">
             <div class="content">
                 <h1><strong>Treehouse </strong>{{x.username}}<img src="../assets/treehouse-logo.png" class="is-pulled-right goal-provider-icon"></h1>
-                <progress class="progress is-small is-success" value="{{x.progress}}" max="100">45%</progress>
-                <h3>{{x.progress}} of {{x.goal_amount}} Points</h3> Time Remaining: 1 day, 23 hours, 21 minutes
+                <progress class="progress is-small is-success" value="{{progress}}" max="100">45%</progress>
+                <h3>{{progress}} of {{x.goal_amount}} Points</h3>
+                <h6>End Date:</h6><span>{{ x.end | moment "dddd, MMMM Do YYYY, h:mm:ss a" }}</span>
             </div>
         </div>
     </div>
@@ -40,12 +41,12 @@ export default {
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
       this.starting_points = response.body[response.body.length -1].starting_points;
-      this.goal_points = response.body[response.body.length -1].goal_amount;
-      this.current_points = response.body[response.body.length -1].value;
-      this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
+       this.goal_points = response.body[response.body.length -1].goal_amount;
+       this.current_points = response.body[response.body.length -1].value;
+       this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
 
-      this.dashboardData = response.body.map(function(i) {
-          return _.extend(i, { showUserInfo: false })
+       this.dashboardData = response.body.map(function(i) {
+         return _.extend(i, { showUserInfo: false })
       })
     }, (response) => {
       // error callback
