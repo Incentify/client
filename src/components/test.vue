@@ -1,3 +1,5 @@
+<!-- TEST COMPONENT ONLY -->
+
 <template>
 <nav class="nav">
   <div class="nav-left">

@@ -1,10 +1,26 @@
-# incentify
+# Incentify
 
 > Motivation app through financial consequences
 
+By tracking metric based achievement sites (Fitbit/Duolingo), we can interface with their API and let users set a goal (5 miles per week) and a financial incentive ($10). If they fail to meet that weekly goal, they get charged through the Stripe API.
+
+## Technologies used
+**NERV Stack**
+Back End: Node/Express
+Database: RethinkDB
+Front End: Vue.js
+
+**APIs**
+Stripe
+Team Treehouse
+
+**CSS**
+Bulma.io
+Animate.css
+
 ## Build Setup
 
-``` bash
+```
 # install dependencies
 npm install
 
@@ -13,15 +29,4 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

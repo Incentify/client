@@ -1,3 +1,4 @@
+<!-- UNUSED COMPONENT -->
 <template>
   <div class="content is-large">
   	<div class="is-mobile lil-marg">

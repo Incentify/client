@@ -1,3 +1,4 @@
+<!-- scriptless component, could be refactored into App.vue -->
 <template>
 	<nav class="box box-slim stickyHeader">
       <a class="" href="#"><img class="logo-size" src="../assets/incentify.logo.png"></a>

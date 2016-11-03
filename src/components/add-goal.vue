@@ -21,6 +21,7 @@
 
 <script>
   export default {
+    // every expected prop needds to be listed to be accessible
     props: [
       'integration-name',
       'integration-short-name',
@@ -28,6 +29,7 @@
     data() {
       return {
         stripe_token: {},
+        // hard coded price for demo day
         price: 1000,
         stripe_instance: {},
         order_status: 'READY',
@@ -45,6 +47,7 @@
         }
       };
     },
+    // on 1st component load config variable is set
     ready() {
       var that = this;
       this.stripe_instance = StripeCheckout.configure({
@@ -59,6 +62,7 @@
       });
     },
     methods: {
+      // kickstarts purchase chain
       commit() {
         var shortname = this.integrationShortName.toLowerCase();
         this.$http.post(process.env.API_URL + '/commitments/' + shortname, this.goal)

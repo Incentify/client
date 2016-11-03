@@ -100,6 +100,7 @@ export default {
       })
      },
   },
+  // init function
   created() {
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback

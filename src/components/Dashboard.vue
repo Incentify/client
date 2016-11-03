@@ -30,6 +30,7 @@ export default {
         progress: 0,
     };
   },
+  // on-component-load function
   ready() {
    this.$http.put(process.env.API_URL + '/users/update').then((response) => {
       // success callback
@@ -40,7 +41,7 @@ export default {
 
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
-
+      // `response.body.length -1` is used to get last array item
         this.starting_points = response.body[response.body.length -1].starting_points;
         console.log(this.starting_points);
 
