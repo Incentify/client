@@ -40,13 +40,22 @@ export default {
 
     this.$http.get(process.env.API_URL + '/users').then((response) => {
       // success callback
-      this.starting_points = response.body[response.body.length -1].starting_points;
-       this.goal_points = response.body[response.body.length -1].goal_amount;
-       this.current_points = response.body[response.body.length -1].value;
-       this.progress = parseFloat((this.current_points - this.starting_points) / this.goal_points);
 
-       this.dashboardData = response.body.map(function(i) {
-         return _.extend(i, { showUserInfo: false })
+        this.starting_points = response.body[response.body.length -1].starting_points;
+        console.log(this.starting_points);
+
+        this.goal_points = response.body[response.body.length -1].goal_amount;
+        console.log(this.goal_points);
+
+        this.current_points = response.body[response.body.length -1].value;
+        console.log(this.current_points);
+
+        this.progress = parseFloat((this.current_points - this.starting_points));
+        console.log(this.progress);
+
+        this.dashboardData = response.body.map(function(i) {
+          return _.extend(i, { showUserInfo: false })
+
       })
     }, (response) => {
       // error callback

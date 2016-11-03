@@ -37,6 +37,9 @@
 </script>
 
 <style>
+body{
+  font-size: calc(1em + 1vw);
+}
   .no-margin {
     margin: 0 !important;
   }
